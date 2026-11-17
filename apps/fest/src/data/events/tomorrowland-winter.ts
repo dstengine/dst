@@ -1014,7 +1014,7 @@ export const guides: Guide[] = [
   {
     slug: "fr-FR",
     createdAt: "2026-11-17T10:56:00+04:00",
-    updatedAt: "2026-11-17T10:56:00+04:00",
+    updatedAt: "2026-11-17T11:25:00+04:00",
     event: "tomorrowland-winter",
     name: "Tomorrowland Winter 2027",
     lang: "fr-FR",
@@ -1025,6 +1025,11 @@ export const guides: Guide[] = [
     hubBlurb: "Du 20 au 27 mars 2027 à l'Alpe d'Huez, en Isère. Tickets Festival avec le forfait de ski, horaires jour par jour, programmation, car depuis Grenoble et remontées entre les villages.",
     expires: {
       prices: "2026-12-28",
+      // The workers' desk asks for the contract by e-mail before « fin
+      // décembre » (ambassadeur.desks.2.proof): from 1 January 2027 that
+      // deadline has passed, and the clause comes off until a commit puts
+      // it back in the past tense (critic m2, FIX round 1).
+      workersProof: "2027-01-01",
     },
     navLabel: "Pages du guide Tomorrowland Winter",
     faqLabel: "Questions fréquentes sur Tomorrowland Winter",
@@ -1033,7 +1038,7 @@ export const guides: Guide[] = [
       {
         slug: "tomorrowland-winter",
         createdAt: "2026-11-17T10:56:00+04:00",
-        updatedAt: "2026-11-17T10:56:00+04:00",
+        updatedAt: "2026-11-17T11:25:00+04:00",
         kind: "main",
         label: "Guide",
         crumb: "Tomorrowland Winter 2027",
@@ -1127,7 +1132,7 @@ export const guides: Guide[] = [
           {
             id: "pourquoi",
             heading: "Pourquoi ce guide existe en français",
-            body: "Tomorrowland Winter a lieu en France, à l'Alpe d'Huez, et ce guide réunit en une page, en français et avec sa date de lecture, ce qui est dispersé entre le site de l'organisateur, son site Ambassadeurs, son centre d'aide, Sunweb, l'Office de Tourisme et Transaltitude : les prix avec le forfait compris, le car depuis Grenoble, les derniers départs des remontées vers les villages et ce qu'un jour « MainStage fermée » veut dire [venue.country].",
+            body: "Tomorrowland Winter a lieu en France, à l'Alpe d'Huez, et ce guide réunit en une page, en français et avec sa date de lecture, ce qui est dispersé entre le site de l'organisateur, son site Ambassadeurs, son centre d'aide, Sunweb, l'Office de Tourisme et Transaltitude : {{until prices}}les prix avec le forfait compris, {{/until}}le car depuis Grenoble, les derniers départs des remontées vers les villages et ce qu'un jour « MainStage fermée » veut dire [venue.country].",
           },
         ],
         faqHeading: "Questions fréquentes",
@@ -1199,7 +1204,7 @@ export const guides: Guide[] = [
       {
         slug: "tomorrowland-winter/billets",
         createdAt: "2026-11-17T10:56:00+04:00",
-        updatedAt: "2026-11-17T10:56:00+04:00",
+        updatedAt: "2026-11-17T11:25:00+04:00",
         kind: "tickets",
         label: "Billets",
         crumb: "Billets",
@@ -1245,7 +1250,7 @@ export const guides: Guide[] = [
             label: "Sources",
           },
         ],
-        lede: "Les billets de Tomorrowland Winter 2027, du samedi 20 au samedi 27 mars 2027 à l'Alpe d'Huez, se vendent sur le Tomorrowland Account, la billetterie de l'organisateur, et chaque Ticket Festival comprend le forfait de ski des jours qu'il couvre [editions.0.start] [editions.0.end] [venue.city] [sellers.0] [onSite.0]. Cette page dit qui vend, {{until prices}}ce que coûtait chaque billet le 16 novembre 2026, {{/until}}quand chaque vente a ouvert, comment on paie, comment céder un billet si vous ne pouvez plus venir, et ce que la billetterie Ambassadeurs réserve aux habitants de l'Oisans. Ce jour-là, les Packages Festival de l'organisateur étaient complets, les Tickets Festival sans hébergement restaient en vente, et Sunweb vendait ses propres packages [editions.0.ticketState].",
+        lede: "Les billets de Tomorrowland Winter 2027, du samedi 20 au samedi 27 mars 2027 à l'Alpe d'Huez, se vendent sur le Tomorrowland Account, la billetterie de l'organisateur, et chaque Ticket Festival comprend le forfait de ski des jours qu'il couvre [editions.0.start] [editions.0.end] [venue.city] [sellers.0] [onSite.0]. Cette page dit qui vend, {{until prices}}ce que coûtait chaque billet le 16 novembre 2026, {{/until}}quand chaque vente a ouvert, comment on paie, comment céder un billet si vous ne pouvez plus venir, et ce que la billetterie Ambassadeurs réserve aux habitants de l'Oisans. Le 16 novembre 2026, les Packages Festival de l'organisateur étaient complets, les Tickets Festival sans hébergement restaient en vente, et Sunweb vendait ses propres packages [editions.0.ticketState].",
         sections: [
           {
             id: "qui-vend",
@@ -1270,7 +1275,7 @@ export const guides: Guide[] = [
           {
             id: "calendrier",
             heading: "Le calendrier des ventes",
-            body: "Les Packages Festival 7 jours de l'organisateur ont ouvert le samedi 3 octobre 2026 à 15 h, les Packages Festival 4 jours le samedi 10 octobre 2026 à 15 h, et les Tickets Festival de 7, 4 et 1 jour le même samedi 10 octobre à 17 h, heure de Paris [saleDates.0] [saleDates.1] [saleDates.2]. L'Add-On Sale, où se vendent les locations de matériel, les cours, les casiers, les pass transport et l'assurance ski, n'avait pas de date le 16 novembre 2026 : l'organisateur écrit qu'elle ouvrira « à l'approche de l'événement », dans le Tomorrowland Account [saleDates.3]. Les casiers y sont en nombre limité [onSite.3]. L'Exchange Desk, la revente officielle, est ouvert depuis le 10 octobre 2026 et jusqu'au mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note].",
+            body: "Les Packages Festival 7 jours de l'organisateur ont ouvert le samedi 3 octobre 2026 à 15 h, les Packages Festival 4 jours le samedi 10 octobre 2026 à 15 h, et les Tickets Festival de 7, 4 et 1 jour le même samedi 10 octobre à 17 h, heure de Paris [saleDates.0] [saleDates.1] [saleDates.2]. L'Add-On Sale, où se vendent les locations de matériel, les cours, les casiers, les pass transport et l'assurance ski, n'avait pas de date le 16 novembre 2026 : l'organisateur écrit qu'elle ouvrira « à l'approche de l'événement », dans le Tomorrowland Account [saleDates.3]. Les casiers y sont en nombre limité [onSite.3]. L'Exchange Desk, la revente officielle, a ouvert le 10 octobre 2026 et sa clôture est fixée au mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note].",
           },
           {
             id: "paiement",
@@ -1280,12 +1285,12 @@ export const guides: Guide[] = [
           {
             id: "revente",
             heading: "Revendre un billet : l'Exchange Desk",
-            body: "L'organisateur nomme une seule revente : l'Exchange Desk, dans le Tomorrowland Account du premier acheteur [sellers.5]. Il accepte les Tickets Festival sans hébergement achetés via Paylogic, pas les packages Sunweb ni les billets Business Sales [sellers.5.note]. Il est ouvert depuis le 10 octobre 2026 et jusqu'au mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note]. La mise en vente est définitive et ne peut pas être retirée, et la revente n'est pas garantie [sellers.5.note]. Si le billet trouve preneur, le vendeur est prévenu par e-mail au plus tard une semaine avant le festival et remboursé sous 4 à 6 semaines{{until prices}}, moins 10 € de frais par billet{{/until}} [sellers.5.note]. En dehors de l'Exchange Desk, la revente est interdite par les conditions générales [paymentAndRules.3].\n\nLien : [Tomorrowland Account](/go/tomorrowland-winter-account/).",
+            body: "L'organisateur nomme une seule revente : l'Exchange Desk, dans le Tomorrowland Account du premier acheteur [sellers.5]. Il accepte les Tickets Festival sans hébergement achetés via Paylogic, pas les packages Sunweb ni les billets Business Sales [sellers.5.note]. Il a ouvert le 10 octobre 2026 et sa clôture est fixée au mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note]. La mise en vente est définitive et ne peut pas être retirée, et la revente n'est pas garantie [sellers.5.note]. Si le billet trouve preneur, le vendeur est prévenu par e-mail au plus tard une semaine avant le festival et remboursé sous 4 à 6 semaines{{until prices}}, moins 10 € de frais par billet{{/until}} [sellers.5.note]. En dehors de l'Exchange Desk, la revente est interdite par les conditions générales [paymentAndRules.3].\n\nLien : [Tomorrowland Account](/go/tomorrowland-winter-account/).",
           },
           {
             id: "ambassadeurs",
             heading: "Billetterie Ambassadeurs : résidents, propriétaires, travailleurs et saisonniers",
-            body: "L'organisateur tient un site Ambassadeurs, en français, pour les habitants des stations de l'Oisans [sources.s10] [ambassadeur.what]. Neuf communes sont concernées : Alpe d'Huez, Auris-en-Oisans, Vaujany, Villard-Reculas, Oz-en-Oisans, La Garde-en-Oisans, Le Freney-d'Oisans, Bourg-d'Oisans et Allemond [ambassadeur.communes]. Les demandes ouvrent « dès début juillet », environ deux mois avant la vente publique [ambassadeur.what]. Les billets sont en quantité limitée et « non garantis » : les communes et Tomorrowland valident chaque demande [ambassadeur.what]. Le 16 novembre 2026, les trois guichets affichaient « 7, 4 & 1 jour – en vente » [ambassadeur.state]. La date de clôture n'est pas publiée [not_found].\n\n- **Guichet Ambassadeurs** : propriétaires et résidents de ces communes sans forfait de saison ou d'année 2026/27 Espace Alpe d'Huez – Aeon, ainsi que leur famille et leurs amis, le nombre de billets dépendant du nombre de lits du logement [ambassadeur.desks.0.who]. Justificatif : une preuve de logement de moins de 3 mois, avec l'adresse et le nom, le téléphone et l'e-mail du propriétaire [ambassadeur.desks.0.proof]. Le billet comprend le festival et le forfait de ski [ambassadeur.desks.0.includes].{{until prices}} Prix : 695 € les 7 jours (20–26 mars), 485 € les 4 jours (23–26 mars), 130 € la journée du 20, 21 ou 22 mars, MainStage fermée, 190 € la journée du 23 au 26 mars, MainStage ouverte [ambassadeur.desks.0.prices].{{/until}}\n- **Guichet Détenteurs de forfait de ski** : propriétaires et résidents des mêmes communes qui ont un forfait de saison ou d'année 2026/27 Espace Alpe d'Huez – Aeon, une demande par personne [ambassadeur.desks.1.who]. La carte seule, un forfait piéton ou le flexipass Aeon ne comptent pas [ambassadeur.desks.1.who]. Justificatifs : preuve de logement de moins de 3 mois et preuve d'achat du forfait, que l'organisateur demandait pour « fin septembre » [ambassadeur.desks.1.proof]. Le billet donne le festival seul, le forfait étant déjà le vôtre pour les remontées [ambassadeur.desks.1.includes].{{until prices}} Prix : 350 € les 7 jours, 315 € les 4 jours, 65 € la journée du 20 au 22 mars, 125 € la journée du 23 au 26 mars [ambassadeur.desks.1.prices].{{/until}}\n- **Guichet Travailleurs et Saisonniers** : salariés et saisonniers de ces communes, logés sur place, les employeurs pouvant préréserver sous des noms provisoires [ambassadeur.desks.2.who]. Justificatifs : preuve de logement de moins de 3 mois et contrat de travail signé des deux parties et valable la semaine du festival, à envoyer par e-mail avant « fin décembre », faute de quoi la demande est abandonnée [ambassadeur.desks.2.proof]. Une promesse d'embauche ne suffit pas [ambassadeur.desks.2.proof]. Festival seul, aux mêmes prix que le guichet précédent{{until prices}} : 350 €, 315 €, 65 € et 125 €{{/until}} [ambassadeur.desks.2.includes] [ambassadeur.desks.2.prices].\n\n{{until prices}}Tous ces prix ont été lus le 16 novembre 2026 sur le site Ambassadeurs de l'organisateur [ambassadeur.desks.0.prices] [ambassadeur.desks.1.prices] [ambassadeur.desks.2.prices] [ambassadeur.state]. Sous chaque ligne de tarif, le site écrit « Hors coût Bracelet et Treasure Case (+15 €) » [ambassadeur.feesNote]. Dans les « Informations importantes » de la même page, il écrit que les tarifs comprennent les frais de paiement, les frais de dossier et le bracelet Tomorrowland Winter [ambassadeur.feesNote]. Les deux mentions figurent ensemble sur chacune des trois pages de guichet [ambassadeur.feesNote]. {{/until}}Pas de facture, pas de remboursement, pas d'échange, pas de changement de nom après personnalisation, le guichet Ambassadeurs permettant une seule repersonnalisation avant la date limite [ambassadeur.feesNote]. Les billets sont nominatifs et la revente est interdite [ambassadeur.feesNote]. {{until prices}}L'option Comfort, la mezzanine de la MainStage ouverte du mardi au vendredi, avec piscines, patinoire et un tour d'Alpine Coaster, coûte 390 € sur un billet 7 ou 4 jours et 150 € sur une journée du 23 au 26 mars [ambassadeur.comfortUpgrade]. {{/until}}Le parcours : formulaire de demande sur la page du guichet, vérification des justificatifs par les communes et Tomorrowland, lien de paiement envoyé par e-mail, parfois longtemps après, 7 jours pour payer, confirmation Paylogic, puis personnalisation dans le Tomorrowland Account pour le seul guichet Ambassadeurs [ambassadeur.process]. Les questions se posent par écrit à ambassadeur@tomorrowlandwinter.com, aucune demande de billetterie n'est traitée par téléphone [ambassadeur.contact]. Les propriétaires de l'Alpe d'Huez et d'Oz 3300 qui ne viennent pas peuvent louer leur appartement via l'organisateur, Tomorrowland et Sunweb gérant l'arrivée, les clés, le ménage et la caution [ambassadeur.louez].\n\nLien : [Site Ambassadeurs (organisateur)](/go/tomorrowland-winter-ambassadeur/).",
+            body: "L'organisateur tient un site Ambassadeurs, en français, pour les habitants des stations de l'Oisans [sources.s10] [ambassadeur.what]. Neuf communes sont concernées : Alpe d'Huez, Auris-en-Oisans, Vaujany, Villard-Reculas, Oz-en-Oisans, La Garde-en-Oisans, Le Freney-d'Oisans, Bourg-d'Oisans et Allemond [ambassadeur.communes]. Les demandes ouvrent « dès début juillet », environ deux mois avant la vente publique [ambassadeur.what]. Les billets sont en quantité limitée et « non garantis » : les communes et Tomorrowland valident chaque demande [ambassadeur.what]. Le 16 novembre 2026, les trois guichets affichaient « 7, 4 & 1 jour – en vente » [ambassadeur.state]. La date de clôture n'est pas publiée [not_found].\n\n- **Guichet Ambassadeurs** : propriétaires et résidents de ces communes sans forfait de saison ou d'année 2026/27 Espace Alpe d'Huez – Aeon, ainsi que leur famille et leurs amis, le nombre de billets dépendant du nombre de lits du logement [ambassadeur.desks.0.who]. Justificatif : une preuve de logement de moins de 3 mois, avec l'adresse et le nom, le téléphone et l'e-mail du propriétaire [ambassadeur.desks.0.proof]. Le billet comprend le festival et le forfait de ski [ambassadeur.desks.0.includes].{{until prices}} Prix : 695 € les 7 jours (20–26 mars), 485 € les 4 jours (23–26 mars), 130 € la journée du 20, 21 ou 22 mars, MainStage fermée, 190 € la journée du 23 au 26 mars, MainStage ouverte [ambassadeur.desks.0.prices].{{/until}}\n- **Guichet Détenteurs de forfait de ski** : propriétaires et résidents des mêmes communes qui ont un forfait de saison ou d'année 2026/27 Espace Alpe d'Huez – Aeon, une demande par personne [ambassadeur.desks.1.who]. La carte seule, un forfait piéton ou le flexipass Aeon ne comptent pas [ambassadeur.desks.1.who]. Justificatifs : preuve de logement de moins de 3 mois et preuve d'achat du forfait, que l'organisateur demandait pour « fin septembre » [ambassadeur.desks.1.proof]. Le billet donne le festival seul, le forfait étant déjà le vôtre pour les remontées [ambassadeur.desks.1.includes].{{until prices}} Prix : 350 € les 7 jours, 315 € les 4 jours, 65 € la journée du 20 au 22 mars, 125 € la journée du 23 au 26 mars [ambassadeur.desks.1.prices].{{/until}}\n- **Guichet Travailleurs et Saisonniers** : salariés et saisonniers de ces communes, logés sur place, les employeurs pouvant préréserver sous des noms provisoires [ambassadeur.desks.2.who]. Justificatifs : preuve de logement de moins de 3 mois et contrat de travail signé des deux parties et valable la semaine du festival{{until workersProof}}, à envoyer par e-mail avant « fin décembre », faute de quoi la demande est abandonnée{{/until}} [ambassadeur.desks.2.proof]. Une promesse d'embauche ne suffit pas [ambassadeur.desks.2.proof]. Le billet donne le festival seul{{until prices}}, aux mêmes prix que le guichet précédent : 350 €, 315 €, 65 € et 125 € [ambassadeur.desks.2.prices]{{/until}} [ambassadeur.desks.2.includes].\n\n{{until prices}}Tous ces prix ont été lus le 16 novembre 2026 sur le site Ambassadeurs de l'organisateur [ambassadeur.desks.0.prices] [ambassadeur.desks.1.prices] [ambassadeur.desks.2.prices] [ambassadeur.state]. Sous chaque ligne de tarif, le site écrit « Hors coût Bracelet et Treasure Case (+15 €) » [ambassadeur.feesNote]. Dans les « Informations importantes » de la même page, il écrit que les tarifs comprennent les frais de paiement, les frais de dossier et le bracelet Tomorrowland Winter [ambassadeur.feesNote]. Les deux mentions figurent ensemble sur chacune des trois pages de guichet [ambassadeur.feesNote]. {{/until}}Pas de facture, pas de remboursement, pas d'échange, pas de changement de nom après personnalisation, le guichet Ambassadeurs permettant une seule repersonnalisation avant la date limite [ambassadeur.feesNote]. Les billets sont nominatifs et la revente est interdite [ambassadeur.feesNote]. {{until prices}}L'option Comfort, la mezzanine de la MainStage ouverte du mardi au vendredi, avec piscines, patinoire et un tour d'Alpine Coaster, coûte 390 € sur un billet 7 ou 4 jours et 150 € sur une journée du 23 au 26 mars [ambassadeur.comfortUpgrade]. {{/until}}Le parcours : formulaire de demande sur la page du guichet, vérification des justificatifs par les communes et Tomorrowland, lien de paiement envoyé par e-mail, parfois longtemps après, 7 jours pour payer, confirmation Paylogic, puis personnalisation dans le Tomorrowland Account pour le seul guichet Ambassadeurs [ambassadeur.process]. Les questions se posent par écrit à ambassadeur@tomorrowlandwinter.com, aucune demande de billetterie n'est traitée par téléphone [ambassadeur.contact]. Les propriétaires de l'Alpe d'Huez et d'Oz 3300 qui ne viennent pas peuvent louer leur appartement via l'organisateur, Tomorrowland et Sunweb gérant l'arrivée, les clés, le ménage et la caution [ambassadeur.louez].\n\nLien : [Site Ambassadeurs (organisateur)](/go/tomorrowland-winter-ambassadeur/).",
           },
         ],
         faq: [],
@@ -1295,7 +1300,7 @@ export const guides: Guide[] = [
       {
         slug: "tomorrowland-winter/dates-lieu",
         createdAt: "2026-11-17T10:56:00+04:00",
-        updatedAt: "2026-11-17T10:56:00+04:00",
+        updatedAt: "2026-11-17T11:25:00+04:00",
         kind: "dates",
         label: "Dates et lieu",
         crumb: "Dates et lieu",
@@ -1360,7 +1365,7 @@ export const guides: Guide[] = [
           {
             id: "ventes",
             heading: "Les dates de vente",
-            body: "Les Packages Festival 7 jours de l'organisateur ont ouvert le samedi 3 octobre 2026 à 15 h, les Packages Festival 4 jours et les Tickets Festival le samedi 10 octobre 2026, à 15 h et à 17 h [saleDates.0] [saleDates.1] [saleDates.2]. Le 16 novembre 2026, les packages de l'organisateur étaient complets, les Tickets Festival en vente, et Sunweb vendait ses propres packages à Auris-en-Oisans et à Vaujany [editions.0.ticketState]. L'Exchange Desk ferme le mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note]. L'Add-On Sale n'a pas encore de date [saleDates.3].{{until prices}} Les prix sont sur la page Billets. → /tomorrowland-winter/billets/ {{/until}}",
+            body: "Les Packages Festival 7 jours de l'organisateur ont ouvert le samedi 3 octobre 2026 à 15 h, les Packages Festival 4 jours et les Tickets Festival le samedi 10 octobre 2026, à 15 h et à 17 h [saleDates.0] [saleDates.1] [saleDates.2]. Le 16 novembre 2026, les packages de l'organisateur étaient complets, les Tickets Festival en vente, et Sunweb vendait ses propres packages à Auris-en-Oisans et à Vaujany [editions.0.ticketState]. La clôture de l'Exchange Desk est fixée au mercredi 20 janvier 2027 à 23 h 59 [sellers.5.note]. L'Add-On Sale n'a pas encore de date [saleDates.3].{{until prices}} Les prix sont sur la page Billets. → /tomorrowland-winter/billets/ {{/until}}",
           },
         ],
         faq: [],
@@ -1370,7 +1375,7 @@ export const guides: Guide[] = [
       {
         slug: "tomorrowland-winter/programmation",
         createdAt: "2026-11-17T10:56:00+04:00",
-        updatedAt: "2026-11-17T10:56:00+04:00",
+        updatedAt: "2026-11-17T11:25:00+04:00",
         kind: "lineup",
         label: "Programmation",
         linkTitle: "Programmation de Tomorrowland Winter 2027, jour par jour",
@@ -1378,6 +1383,11 @@ export const guides: Guide[] = [
         title: "Programmation Tomorrowland Winter 2027 — guide du festival",
         description: "Line-up de Tomorrowland Winter 2027 jour par jour, du 20 au 26 mars à l'Alpe d'Huez : Charlotte de Witte, Lost Frequencies, Steve Aoki. Guide du festival.",
         h1: "Programmation de Tomorrowland Winter 2027",
+        // Held as on Billets, Dates et lieu and Comment y aller: at 360 px Chrome
+        // split « Tomorrow-land » (QA round 1, 17 Nov 2026); the note on Comment y
+        // aller, written before that sweep, had this page better unheld. Only
+        // « Program-mation » may still hyphenate, at 305–320 px.
+        h1Keep: ["Tomorrowland", "Winter"],
         anchors: [
           {
             target: "/tomorrowland-winter/billets/",
