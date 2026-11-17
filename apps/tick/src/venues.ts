@@ -9,8 +9,13 @@
 // languages, because an entry's venue line is localised with the rest of
 // it and the English page sees the English string.
 //
-// Addresses and coordinates are the ones the entries themselves carry; a
-// room whose entries give neither has neither here, rather than a guess.
+// Addresses and coordinates are the ones the entries themselves carry. A
+// room whose entries give its address but no coordinates takes them here
+// only when two independent sources put the point inside one building:
+// two maps that agree on the room, or the room's own map link and a
+// building mapped there in the block its address names. Its row names the
+// two and says what they leave open; a room no two sources agree on has no
+// coordinates, rather than a guess.
 import { buildVenues, venueOf, venueHrefFor as hrefFor, type Venue, type VenueSpec } from "@dst/content/venues";
 import type { EventItem } from "@dst/content/types";
 import type { Lang } from "./content";
@@ -127,6 +132,9 @@ const ROWS: Row[] = [
     slug: "paronyan-musical-comedy-theatre",
     match: ["Հակոբ Պարոնյանի անվան", "Hakob Paronyan State Musical Comedy Theatre"],
     schemaType: "PerformingArtsTheater",
+    // OpenStreetMap's theatre, way 1009118074 (Vazgen Sargsyan Street 7),
+    // and Google's place pin for the theatre, 7 m apart (17 Nov 2026).
+    geo: { lat: 40.1774973, lng: 44.5109111 },
     hy: { name: "Հակոբ Պարոնյանի անվան երաժշտական կոմեդիայի թատրոն", short: "Պարոնյանի թատրոն", address: "Վազգեն Սարգսյանի 7", kind: "Թատրոն" },
     en: { name: "Hakob Paronyan Musical Comedy Theatre", short: "Paronyan Theatre", address: "7 Vazgen Sargsyan Street", kind: "Theatre" },
   },
@@ -135,6 +143,10 @@ const ROWS: Row[] = [
     match: ["Souly Music Hall"],
     street: true,
     schemaType: "MusicVenue",
+    // Google's place pin for "Souly music hall & restaurant", inside
+    // OpenStreetMap's events venue at Teryan Street 76 (way 217516901, which
+    // OSM names Yans), 7 m from the building's centre (17 Nov 2026).
+    geo: { lat: 40.190305, lng: 44.5240119 },
     hy: { name: "Souly Music Hall", address: "Տերյան 76", kind: "Համերգասրահ" },
     en: { name: "Souly Music Hall", address: "76 Teryan Street", kind: "Music hall" },
   },
@@ -143,6 +155,14 @@ const ROWS: Row[] = [
     match: ["Eventhub Yerevan"],
     street: true,
     schemaType: "EventVenue",
+    // The point the hall's own site, eventhubyerevan.am, links its map to
+    // (Google's place 6G4P+H26), inside OpenStreetMap's building way
+    // 167949672 in the block at Avetis Aharonyan 3, about 2 m from its
+    // centre. OSM numbers that building plain 3 and the block's others 3/2
+    // to 3/7, with no 3/8, so the map does not itself say which building
+    // is the hall's (17 Nov 2026). The ticket seller eventhub.am gives the
+    // street's centre instead, 180 m away.
+    geo: { lat: 40.206324, lng: 44.5347685 },
     hy: { name: "Eventhub Yerevan", address: "Ավետիս Ահարոնյան 3/8", kind: "Միջոցառումների տարածք" },
     en: { name: "Eventhub Yerevan", address: "3/8 Avetis Aharonyan Street", kind: "Event space" },
   },
