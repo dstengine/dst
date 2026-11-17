@@ -325,7 +325,10 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
         });
   const place = {
     "@type": "Place",
-    name: venue.name,
+    // The sheet's venue name, unless the markup names the place itself
+    // (Tomorrowland Winter: the scout's venue.name is an English note on
+    // where the stages stand, and the Place is « L'Alpe d'Huez »).
+    name: markup.placeName ?? venue.name,
     address: { "@type": "PostalAddress", ...postal },
     geo: { "@type": "GeoCoordinates", latitude: at.lat, longitude: at.lon },
   };

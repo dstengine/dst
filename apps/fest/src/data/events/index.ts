@@ -13,8 +13,9 @@ import * as igloofest from "./igloofest";
 import * as untoldDubai from "./untold-dubai";
 import * as lollapaloozaIndia from "./lollapalooza-india";
 import * as edcMexico from "./edc-mexico";
+import * as tomorrowlandWinter from "./tomorrowland-winter";
 
-const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo, wonderfruit, zamnaTulum, igloofest, untoldDubai, lollapaloozaIndia, edcMexico];
+const files = [beyondTheValley, fieldDay, creamfieldsChile, primaveraSoundSaoPaulo, wonderfruit, zamnaTulum, igloofest, untoldDubai, lollapaloozaIndia, edcMexico, tomorrowlandWinter];
 const raw: Guide[] = files.flatMap((f) => f.guides);
 
 // Each hop learns the language its `title` is written in: the first guide,
@@ -24,12 +25,13 @@ const raw: Guide[] = files.flatMap((f) => f.guides);
 // as they are loaded, and so are its hops' titles in French, which its
 // links carry: `title` where the hop's language is French, each French
 // entry of `titles`. The data keeps the copy as its reviewers read it, and
-// every page, twin and hop prints the one typography. No other guide
-// changes.
+// every page, twin and hop prints the one typography, in the guide's own
+// locale: France's rules for a fr-FR guide (Tomorrowland Winter), Quebec's
+// for fr-CA (copy.ts, FR_FR_RULES). No other guide changes.
 const loaded = (t: GoTarget, titleLang: string | undefined): GoTarget => ({
   ...t,
-  title: titleLang !== undefined && isFrench(titleLang) ? oqlf(t.title) : t.title,
-  ...(t.titles && { titles: Object.fromEntries(Object.entries(t.titles).map(([lang, title]) => [lang, isFrench(lang) ? oqlf(title) : title])) }),
+  title: titleLang !== undefined && isFrench(titleLang) ? oqlf(t.title, titleLang) : t.title,
+  ...(t.titles && { titles: Object.fromEntries(Object.entries(t.titles).map(([lang, title]) => [lang, isFrench(lang) ? oqlf(title, lang) : title])) }),
   titleLang,
 });
 export const events: FestEvent[] = files
@@ -38,4 +40,4 @@ export const events: FestEvent[] = files
     const langs = hopLanguages(e, raw);
     return { ...e, go: Object.fromEntries(Object.entries(e.go).map(([k, t]) => [k, loaded(t, langs[k])])) };
   });
-export const guides: Guide[] = raw.map((g) => (isFrench(g.lang) ? typographed(g) : g));
+export const guides: Guide[] = raw.map((g) => (isFrench(g.lang) ? typographed(g, "", g.lang) : g));

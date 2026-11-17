@@ -333,6 +333,24 @@ const FR_DATE = `(?<!\\d)\\d{1,2}(?:er)?[ \\u00a0]${MOIS}(?:[ \\u00a0]\\d{4})?(?
 const FR_NOUN = "(?:ans|mois|jours|soirées|nuits|scènes|villes|billets|artistes|personnes|éditions|Igloosapiens)";
 const FR_COUNT = `(?<![\\d,.])\\d[\\d\\u00a0]*(?: à \\d+)?[ \\u00a0]${FR_NOUN}(?![\\p{L}\\d])`;
 const KEEP_FR = new RegExp([FR_DATE, FR_COUNT].join("|"), "gu");
+// France (Tomorrowland Winter, card 2026-11-16): Quebec's row, and what
+// the build's line-break sweeps (17 November 2026, 305 to 1,280 px) found
+// split on its pages: a range of days with its month ("23 | au 26 mars",
+// "23 | au vendredi 26 mars"), never its first weekday or its year, which
+// made a run of 35 letters the lede then broke inside « 202|7 »; a weekday
+// with its day ("au vendredi | 26."); the nouns its pages count that
+// Igloofest's never did ("1 | jour", "90 | minutes", "100 | DJ"); a place
+// or a stage named with a number ("Oz | 3300", "Space | 92"); a postcode
+// with its town ("38750 | Huez"); an act's name with its capital initials
+// ("Yves | V", "Jelle | DK"). Its own row, so Igloofest's pages keep their
+// bytes.
+const JOUR_FR = "(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)";
+const FR_RANGE = `(?<!\\d)\\d{1,2}(?:er)? au (?:${JOUR_FR} )?\\d{1,2}(?:er)?[ \\u00a0]${MOIS}(?![\\p{L}\\d])`;
+const FR_WEEKDAY = `\\b${JOUR_FR} \\d{1,2}(?:er)?(?:[ \\u00a0]${MOIS}(?:[ \\u00a0]\\d{4})?)?(?![\\p{L}\\d])`;
+const FR_FR_NOUN = "(?:ans|mois|jours?|soirées|nuits|scènes|villes|billets|artistes|personnes|éditions|passages|noms|minutes|semaines|visiteurs|remontées|DJ)";
+const FR_FR_COUNT = `(?<![\\d,.])\\d[\\d\\u00a0]*(?: à \\d+)?[ \\u00a0]${FR_FR_NOUN}(?![\\p{L}\\d])`;
+const FR_FR_NAMED = "\\b(?:Oz|Space) \\d+\\b|\\b\\d{5} \\p{Lu}\\p{Ll}+|\\b\\p{Lu}\\p{Ll}+ \\p{Lu}{1,2}(?![\\p{L}\\d])";
+const KEEP_FR_FR = new RegExp([FR_RANGE, FR_WEEKDAY, FR_DATE, FR_FR_COUNT, FR_FR_NAMED].join("|"), "gu");
 // English, as Zamna Tulum's English guide writes it (the twin of its
 // Mexican Spanish one, 24 October 2026): the forms ES_MX_TOKENS holds, as
 // the English copy prints them. A sum with its currency code ("2,196 USD",
@@ -479,7 +497,7 @@ const EN_IN_TOKENS = [
   `\\bMumbai \\d{6}\\b|\\bK\\.K\\. Marg\\b|\\bSt\\. Vincent\\b`, // Mumbai 400034, K.K. Marg, St. Vincent (Lollapalooza India)
 ];
 const KEEP_EN_IN = new RegExp([KEEP_EN.source, ...EN_IN_TOKENS].join("|"), "g");
-const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR };
+const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR, "fr-fr": KEEP_FR_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -555,6 +573,9 @@ const GLUE: Record<string, (run: string) => string> = {
   "es-mx": (run) => run.replace(GLUE_ES_MX, (m) => m.replace(/ /g, "\u00a0")).replace(/\b(\p{Lu})-(?=\p{Lu})/gu, "$1-\u2060"),
   th: (run) => run.replace(KEEP_TH, (m) => m.replace(/ /g, "\u00a0").replace(/–/g, "–\u2060")),
   fr: (run) => run.replace(KEEP_FR, (m) => m.replace(/ /g, "\u00a0")),
+  // And a one-letter prefix keeps its name by a word joiner, as in es-mx:
+  // the line-up broke « A- | Trak » at 320 px.
+  "fr-fr": (run) => run.replace(KEEP_FR_FR, (m) => m.replace(/ /g, "\u00a0")).replace(/\b(\p{Lu})-(?=\p{Lu})/gu, "$1-\u2060"),
 };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
@@ -1285,7 +1306,12 @@ export function sourcesMd(text: string, ctx: Ctx): string {
 // in « 11 h », inside a grouped figure (« 18 000 », a whole one only: the
 // native reader's gate-3 note 6), after an ordinal (« 1er janvier »,
 // « 5e édition »), and after « BUNT. », an act's name that must not end a
-// line. The session's item 12 on Igloofest, as code. The copy keeps the
+// line. The session's item 12 on Igloofest, as code. France's usage
+// (Tomorrowland Winter's fr-FR guide, SEO gate 1 note 5, card
+// 2026-11-16-tomorrowland-winter-fr) differs in three places, in FR_FR_RULES
+// below: a no-break space before « ; », « ? » and « ! » rather than none,
+// « € » held to its figure like « $ » and « % », and a unit (« km », « m »,
+// « min ») to its figure. The copy keeps the
 // plain spaces its reviewers read; this runs on a French guide's strings
 // as the guide is loaded (data/events/index.ts). Every rule swaps a space
 // for a no-break one or drops it, and none adds a character, so a title
@@ -1316,8 +1342,26 @@ const OQLF_RULES: [RegExp, string][] = [
   [/(?<![\p{L}\d])(\d+(?:er|re|e)) (?=\p{L})/gu, "$1 "], // 1er janvier, 5e édition
   [/\bBUNT\. /g, "BUNT. "],
 ];
-export function oqlf(text: string): string {
-  const set = (s: string) => OQLF_RULES.reduce((t, [re, to]) => t.replace(re, to), s);
+// France's list: Quebec's with its first rule and its currency rule
+// replaced, and a unit rule added after the figures'. Built from
+// OQLF_RULES, so a rule both share is one line, and Quebec's list keeps its
+// bytes. The space before « ; ? ! » is U+00A0 like every other here (the
+// native reader's call on the built pages, card section 8).
+const FR_FR_RULES: [RegExp, string][] = [
+  [/[  ]+([;?!])/g, " $1"], // Vraiment ? → Vraiment ?
+  ...OQLF_RULES.slice(1, 4),
+  [/(\d) ([$%€])/g, "$1 $2"], // 735 €
+  ...OQLF_RULES.slice(5, 9),
+  [/(\d) (km|m|min)(?!\p{L})/gu, "$1 $2"], // 250 km, 1 860 m, 45 min; never « 20 mars »
+  ...OQLF_RULES.slice(9),
+];
+/** The rules a French locale takes: France's for "fr-FR", Quebec's for
+    "fr-CA" and for a bare "fr" (LONG_DATE.fr, whose dates hold none of
+    the marks the two lists set apart). */
+const rulesFor = (locale: string) => (locale.toLowerCase() === "fr-fr" ? FR_FR_RULES : OQLF_RULES);
+export function oqlf(text: string, locale = "fr-CA"): string {
+  const rules = rulesFor(locale);
+  const set = (s: string) => rules.reduce((t, [re, to]) => t.replace(re, to), s);
   let out = "";
   let at = 0;
   for (const m of text.matchAll(OQLF_SKIP)) {
@@ -1327,19 +1371,20 @@ export function oqlf(text: string): string {
   return out + set(text.slice(at));
 }
 
-/** A guide's language is French: "fr-CA". */
+/** A guide's language is French: "fr-CA" or "fr-FR". */
 export const isFrench = (lang: string) => lang.slice(0, 2).toLowerCase() === "fr";
 
 /** Values that are paths, ids, dates, keys and the structured data's
     machine strings, not words: oqlf leaves them alone (the CTO's gate-3
     bound (a) on Igloofest). */
 const MACHINE = new Set(["slug", "createdAt", "updatedAt", "event", "lang", "dir", "path", "href", "target", "id", "kind", "expires", "rel", "url", "source", "markup"]);
-/** Every word of a record set by oqlf, its machine values as they were. */
-export function typographed<T>(value: T, key = ""): T {
+/** Every word of a record set by oqlf in the record's locale ("fr-FR"
+    takes France's rules), its machine values as they were. */
+export function typographed<T>(value: T, key = "", locale = "fr-CA"): T {
   if (MACHINE.has(key)) return value;
-  if (typeof value === "string") return oqlf(value) as T;
-  if (Array.isArray(value)) return value.map((v) => typographed(v)) as T;
-  if (isObject(value)) return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, typographed(v, k)])) as T;
+  if (typeof value === "string") return oqlf(value, locale) as T;
+  if (Array.isArray(value)) return value.map((v) => typographed(v, "", locale)) as T;
+  if (isObject(value)) return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, typographed(v, k, locale)])) as T;
   return value;
 }
 

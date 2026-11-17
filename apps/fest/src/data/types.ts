@@ -113,6 +113,15 @@ export interface FestEvent extends Dated {
         Igloofest's main page marks up Montréal's run as « Igloofest
         Montréal 2027 » (the SEO lead's D8). */
     name?: string;
+    /** The Place's name in the markup, where the sheet's `venue.name` is
+        a note rather than a name: Tomorrowland Winter's « L'Alpe d'Huez »,
+        whose sheet names the resort, the MainStage and the mountain
+        stages in one English line (the SEO lead's gate-3 note 3, card
+        2026-11-16-tomorrowland-winter-fr). Written in the event's first
+        guide's language, as `name` is; a later guide that needs its own
+        would take an entry the way `perGuide` holds its address. Absent,
+        the Place is named `venue.name`. */
+    placeName?: string;
     /** The sheet key of the venue ({ name, lat, lon, country }), where the
         sheet holds a list of venues rather than one `venue`
         ("venues.v1"). */
