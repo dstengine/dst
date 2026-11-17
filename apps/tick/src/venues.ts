@@ -16,9 +16,11 @@ import type { EventItem } from "@dst/content/types";
 import type { Lang } from "./content";
 import { eventsFor, prefix } from "./i18n";
 
-// `short`: the name as a title runs it — "Khachaturian Concert Hall" where
-// the page says "Aram Khachaturian Concert Hall" — because the title has
-// sixty characters and the city has to fit in them too.
+// `short`: the name as a title runs it when the whole one leaves no room —
+// "Karen Demirchyan Complex" where the page says "Karen Demirchyan Sports
+// and Concerts Complex" — because the title has sixty characters and the
+// city has to fit in them too. The whole name is tried first: it is what
+// the searches for a room say (../venue-head.ts).
 type Words = { name: string; short?: string; address?: string; locality?: string; region?: string; kind: string };
 interface Row {
   slug: string;
@@ -27,6 +29,14 @@ interface Row {
   url?: string;
   /** See VenueSpec.schemaType. */
   schemaType: string;
+  /** The room is searched for by its street, so its page's title carries
+      the street where it fits (../venue-head.ts). Set from Search Console,
+      28 days to 16 Nov 2026: "avetis aharonyan 3/8" and "aharonyan 3/8"
+      were 47 of the 57 impressions Eventhub's English page has queries
+      for, at position 10; "koryun 19a" reached Tonelab's twice (position
+      19) and "տերյան 76" Souly's Armenian page three times (position 26),
+      thin, but a street costs those titles nothing else they were found by. */
+  street?: true;
   hy: Words;
   en: Words;
 }
@@ -67,6 +77,7 @@ const ROWS: Row[] = [
   {
     slug: "tonelab",
     match: ["Tonelab"],
+    street: true,
     geo: { lat: 40.1896107, lng: 44.5210393 },
     schemaType: "MusicVenue",
     hy: { name: "Tonelab", address: "Կորյունի 19ա", kind: "Ակումբ" },
@@ -93,8 +104,8 @@ const ROWS: Row[] = [
     match: ["Կարեն Դեմիրճյանի անվան", "Karen Demirchyan Sports and Concert"],
     geo: { lat: 40.1881503, lng: 44.4833297 },
     schemaType: "StadiumOrArena",
-    hy: { name: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր", short: "Դեմիրճյանի համալիր", address: "Ծիծեռնակաբերդի խճուղի 1", kind: "Մարզահամերգային համալիր" },
-    en: { name: "Karen Demirchyan Sports and Concerts Complex", short: "Demirchyan Complex", address: "1 Tsitsernakaberd Highway", kind: "Arena" },
+    hy: { name: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր", short: "Դեմիրճյանի մարզահամերգային համալիր", address: "Ծիծեռնակաբերդի խճուղի 1", kind: "Մարզահամերգային համալիր" },
+    en: { name: "Karen Demirchyan Sports and Concerts Complex", short: "Karen Demirchyan Complex", address: "1 Tsitsernakaberd Highway", kind: "Arena" },
   },
   {
     slug: "cafesjian-center",
@@ -122,6 +133,7 @@ const ROWS: Row[] = [
   {
     slug: "souly-music-hall",
     match: ["Souly Music Hall"],
+    street: true,
     schemaType: "MusicVenue",
     hy: { name: "Souly Music Hall", address: "Տերյան 76", kind: "Համերգասրահ" },
     en: { name: "Souly Music Hall", address: "76 Teryan Street", kind: "Music hall" },
@@ -129,6 +141,7 @@ const ROWS: Row[] = [
   {
     slug: "eventhub-yerevan",
     match: ["Eventhub Yerevan"],
+    street: true,
     schemaType: "EventVenue",
     hy: { name: "Eventhub Yerevan", address: "Ավետիս Ահարոնյան 3/8", kind: "Միջոցառումների տարածք" },
     en: { name: "Eventhub Yerevan", address: "3/8 Avetis Aharonyan Street", kind: "Event space" },
@@ -425,9 +438,9 @@ const PLACES: Row[] = [
 ];
 
 /** The table in one language: a VenueSpec per row. */
-const inLang = (rows: Row[], lang: Lang): (VenueSpec & { short?: string })[] =>
+const inLang = (rows: Row[], lang: Lang): (VenueSpec & { short?: string; street?: true })[] =>
   rows.map(({ hy, en, ...rest }) => ({ ...rest, ...(lang === "hy" ? hy : en) }));
-export const specs = (lang: Lang): (VenueSpec & { short?: string })[] => inLang(ROWS, lang);
+export const specs = (lang: Lang): (VenueSpec & { short?: string; street?: true })[] => inLang(ROWS, lang);
 const everyPlace: Record<Lang, VenueSpec[]> = {
   hy: [...inLang(ROWS, "hy"), ...inLang(PLACES, "hy")],
   en: [...inLang(ROWS, "en"), ...inLang(PLACES, "en")],
@@ -436,7 +449,7 @@ const everyPlace: Record<Lang, VenueSpec[]> = {
 const today = new Date().toISOString().slice(0, 10);
 
 /** Every venue that has earned a page, per language, computed once. */
-export const allVenues: Record<Lang, (Venue & VenueSpec & { short?: string })[]> = {
+export const allVenues: Record<Lang, (Venue & VenueSpec & { short?: string; street?: true })[]> = {
   hy: buildVenues({ items: eventsFor("hy"), venues: specs("hy"), today }),
   en: buildVenues({ items: eventsFor("en"), venues: specs("en"), today }),
 };

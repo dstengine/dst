@@ -24,8 +24,9 @@ import { site } from "../site.config";
 import { LOCALE, eventsBase, prefix } from "../i18n";
 import { NAV } from "../layouts/nav";
 import { venuesBase } from "../venues";
+import { venueTitle, venueSummary } from "../venue-head";
 
-interface Props { lang: Lang; venue: Venue & VenueSpec & { short?: string } }
+interface Props { lang: Lang; venue: Venue & VenueSpec & { short?: string; street?: true } }
 const { lang, venue } = Astro.props;
 const p = prefix(lang);
 const L = withLabels(labels[lang]);
@@ -41,20 +42,22 @@ const nextOn = next ? nextDay(next, today) : undefined;
 const nextDate = nextOn ? formatCardDate(nextOn, LOCALE[lang]) : undefined;
 const count = venue.items.length;
 
-// The head: the room and the city in the first words, then what the search
-// for the room asks — how many dates, which is next, where it is. The title
-// takes the short name where there is one: sixty characters hold
-// "Khachaturian Concert Hall, Yerevan" and not the full name with it.
-const short = venue.short ?? venue.name;
-const title = lang === "hy"
-  ? `${short}, Երևան․ ինչ կա և տոմսեր`
-  : `${short}, Yerevan: what's on and tickets`;
-const description = lang === "hy"
-  ? `${venue.name}՝ Երևանում${venue.address ? `, ${venue.address}` : ""}․ ${L.eventCount(count)} այս օրացույցում${next && nextDate ? `, հաջորդը՝ ${next.title}, ${nextDate}` : ""}։ Քարտեզ, երթուղի և ամեն միջոցառում՝ գնով ու աղբյուրով։`
-  : `${venue.name} in Yerevan${venue.address ? `, ${venue.address}` : ""}: ${L.eventCount(count)} on this calendar${next && nextDate ? `, next ${next.title} on ${nextDate}` : ""}. Map, directions and every event with its price and source.`;
+// The head: the room in the first words and the city after it, then what
+// the search for the room asks — where it is, how many dates. Which form
+// of the name, and what gives way when sixty and a hundred and sixty
+// characters run out, is ../venue-head.ts; the next date stays in the
+// glance below, which is read on the day, and out of the summary, which a
+// search result can show for weeks. The summary and the lede promise a map
+// only where the page draws one (a row with `geo`), and no order: until
+// 17 Nov 2026 both said "the next first" and "with a map" on every page,
+// though three rooms have no map, two had nothing ahead, and the list puts
+// what is on now below what is upcoming.
+const map = Boolean(venue.geo);
+const title = venueTitle(venue, lang, city);
+const description = venueSummary(venue, { count: L.eventCount(count), map }, lang, city);
 const lede = lang === "hy"
-  ? `${venue.kind ?? "Վայր"}${venue.address ? `՝ ${venue.address}` : ""}։ Բոլոր ամսաթվերը, որ ունենք այս վայրի համար՝ առաջիկան առաջինը, քարտեզով և երթուղով։`
-  : `${venue.kind ?? "Venue"}${venue.address ? ` at ${venue.address}` : ""}. Every date this site holds for it, the next first, with a map and the way there.`;
+  ? `${venue.kind ?? "Վայր"}${venue.address ? `՝ ${venue.address}` : ""}։ Բոլոր ամսաթվերը, որ ունենք այս վայրի համար${map ? ", քարտեզով և երթուղով" : ""}։`
+  : `${venue.kind ?? "Venue"}${venue.address ? ` at ${venue.address}` : ""}. Every date this site holds for it${map ? ", with a map and the way there" : ""}.`;
 
 const glance = [
   venue.kind && { label: w.kind, value: venue.kind, icon: ICONS.building },

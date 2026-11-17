@@ -192,6 +192,49 @@ describe("page metadata", () => {
   });
 });
 
+// tick.am's venue pages are searched for by the rooms' whole names and their
+// streets (apps/tick/src/venue-head.ts). Until 17 Nov 2026 Eventhub's title
+// read "Eventhub Yerevan, Yerevan" and most summaries ran past two hundred
+// characters, so the result was cut before the map and directions it
+// promised. The rule's cases are pinned in when-and-admission; this checks
+// what was built. The city is counted, not matched against one phrasing:
+// a street between "Eventhub Yerevan" and a second "Yerevan" is the same
+// fault. In the summary only its head is counted, the words before the
+// number of events, as the rest is free to name a place. An Armenian page
+// counts Երևան alone: a room named in Latin letters ("Eventhub Yerevan")
+// still owes the page its keyword in the page's script. And the summary
+// and the lede promise a map only where the page draws one, and no order
+// of dates: the list puts what is on now below what is upcoming, so "the
+// next first" was false wherever a run was under way.
+describe("tick venue pages", () => {
+  const venues = () => pages.filter((p) => p.app === "tick" && /^\/(am\/)?venues\/[^/]+\/$/.test(p.url));
+  test("each says the city once, in a title of sixty and a summary of 160", () => {
+    assert.ok(venues().length >= 20, `expected the venue pages, found ${venues().length}`);
+    const bad = [];
+    for (const p of venues()) {
+      const city = p.url.startsWith("/am/") ? "Երևան" : "Yerevan";
+      const title = titleOf(p.html);
+      const desc = metaDescOf(p.html);
+      const both = `${title} | ${desc}`;
+      if ([...title].length > 60) bad.push(`${p.url}: title ${[...title].length}: ${title}`);
+      if ([...desc].length > 160) bad.push(`${p.url}: summary ${[...desc].length}: ${desc}`);
+      if (!title.includes(city) || !desc.includes(city)) bad.push(`${p.url}: no ${city}: ${both}`);
+      const times = (s) => (s.match(new RegExp(city, "g")) ?? []).length;
+      const opening = desc.split(/: \d|։ Այս օրացույցում/)[0];
+      if (times(title) !== 1) bad.push(`${p.url}: the title says ${city} ${times(title)} times: ${title}`);
+      if (times(opening) !== 1) bad.push(`${p.url}: the summary's head says ${city} ${times(opening)} times: ${opening}`);
+      const map = p.html.includes('class="container venue-map"');
+      if (/Map|Քարտեզ/.test(desc) && !map) bad.push(`${p.url}: the summary promises a map the page does not draw: ${desc}`);
+      const found = p.html.match(/<p class="lede"[^>]*>([^<]*)/);
+      if (!found) bad.push(`${p.url}: no lede found, so its promises went unchecked`);
+      const lede = decode(found?.[1] ?? "");
+      if (/with a map|քարտեզով/.test(lede) && !map) bad.push(`${p.url}: the lede promises a map the page does not draw: ${lede}`);
+      if (/next first|առաջիկան առաջինը|մոտակայից/.test(`${desc} ${lede}`)) bad.push(`${p.url}: an order of dates the list does not keep: ${desc} | ${lede}`);
+    }
+    assert.deepEqual(bad, [], bad.join("\n  "));
+  });
+});
+
 // The FAQ block's h2 joins the page's name to a label. Until 14 Nov 2026
 // the join was a colon whatever the name held, and 241 of 891 headings read
 // "New Year in Yerevan 2026–2027: New Year's Eve and Christmas: questions"

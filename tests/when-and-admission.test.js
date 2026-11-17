@@ -339,3 +339,122 @@ describe("the opera section's own words", async () => {
     assert.equal(workName({ title: "«Պայացներ» և «Ջանի Սկիկի»" }, "hy"), "«Պայացներ» և «Ջանի Սկիկի»");
   });
 });
+
+// A venue page's title and summary on tick.am (apps/tick/src/venue-head.ts):
+// the rooms are searched for by their names as people say them and, a few,
+// by their streets, so the title keeps the whole name before "and tickets",
+// never says the city twice, and a room flagged `street` carries its street
+// where it fits. The summary promises a map only where the page draws one,
+// and no order of dates. The names and
+// addresses below are the table's own (apps/tick/src/venues.ts), except
+// where a case needs a room it lacks.
+describe("a venue page's head", async () => {
+  const { venueTitle, venueSummary, TITLE_MAX, SUMMARY_MAX } = await import("../apps/tick/src/venue-head.ts");
+  const EN = "Yerevan";
+  const HY = "Երևան";
+  const MAP = { map: true };
+  const ghaplanyan = { name: "Hrachya Ghaplanyan Drama Theatre", short: "Ghaplanyan Theatre", address: "28 Isahakyan Street" };
+  const eventhub = { name: "Eventhub Yerevan", address: "3/8 Avetis Aharonyan Street", street: true };
+  const eventhubHy = { name: "Eventhub Yerevan", address: "Ավետիս Ահարոնյան 3/8", street: true };
+
+  test("the whole name wins over 'and tickets', the short name is the last resort", () => {
+    assert.equal(venueTitle(ghaplanyan, "en", EN), "Hrachya Ghaplanyan Drama Theatre, Yerevan: what's on");
+    assert.equal(venueTitle({ name: "Komitas Chamber Music House", short: "Komitas Chamber House" }, "en", EN), "Komitas Chamber Music House, Yerevan: what's on and tickets");
+    assert.equal(
+      venueTitle({ name: "Karen Demirchyan Sports and Concerts Complex", short: "Karen Demirchyan Complex" }, "en", EN),
+      "Karen Demirchyan Complex, Yerevan: what's on and tickets",
+    );
+    assert.equal(
+      venueTitle({ name: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր", short: "Դեմիրճյանի մարզահամերգային համալիր" }, "hy", HY),
+      "Դեմիրճյանի մարզահամերգային համալիր, Երևան․ ինչ կա և տոմսեր",
+    );
+    assert.equal(venueTitle({ name: "Bohem Theatre" }, "en", EN), "Bohem Theatre, Yerevan: what's on and tickets");
+  });
+
+  test("a name that says the city is not followed by it, and only a word says it", () => {
+    assert.equal(venueTitle({ name: "Eventhub Yerevan" }, "en", EN), "Eventhub Yerevan: what's on and tickets");
+    assert.equal(venueTitle(eventhub, "en", EN), "Eventhub Yerevan, 3/8 Avetis Aharonyan Street: what's on");
+    assert.equal(
+      venueSummary(eventhub, { count: "3 events", map: false }, "en", EN),
+      "Eventhub Yerevan, 3/8 Avetis Aharonyan Street: 3 events on this calendar.",
+    );
+    // The layout's suffix rule (@dst/ui/title) reads the city as a word; so
+    // does this one, or it would leave the city to the layout's " — Yerevan".
+    assert.equal(venueTitle({ name: "Yerevantsi Jazz Club" }, "en", EN), "Yerevantsi Jazz Club, Yerevan: what's on and tickets");
+  });
+
+  test("an Armenian page says Երևան once, even for a room whose Latin name says Yerevan", () => {
+    assert.equal(venueTitle(eventhubHy, "hy", HY), "Eventhub Yerevan, Ավետիս Ահարոնյան 3/8, Երևան․ ինչ կա");
+    assert.equal(
+      venueSummary(eventhubHy, { count: "3 միջոցառում", map: false }, "hy", HY),
+      "Eventhub Yerevan՝ Երևանում, Ավետիս Ահարոնյան 3/8։ Այս օրացույցում՝ 3 միջոցառում։",
+    );
+  });
+
+  test("a street flagged for search goes before the city, and gives way to the name", () => {
+    assert.equal(venueTitle({ name: "Tonelab", address: "19a Koryun Street", street: true }, "en", EN), "Tonelab, 19a Koryun Street, Yerevan: what's on and tickets");
+    assert.equal(venueTitle({ name: "Souly Music Hall", address: "76 Teryan Street", street: true }, "en", EN), "Souly Music Hall, 76 Teryan Street, Yerevan: what's on");
+    // Too long with the street: the whole name and the city, without it.
+    assert.equal(venueTitle({ ...ghaplanyan, street: true }, "en", EN), "Hrachya Ghaplanyan Drama Theatre, Yerevan: what's on");
+    // No address, no street: the flag alone adds nothing.
+    assert.equal(venueTitle({ name: "Tonelab", street: true }, "en", EN), "Tonelab, Yerevan: what's on and tickets");
+  });
+
+  test("the Armenian title takes the same steps", () => {
+    assert.equal(
+      venueTitle({ name: "Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն", short: "Ղափլանյանի թատրոն" }, "hy", HY),
+      "Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն, Երևան․ ինչ կա",
+    );
+    assert.equal(venueTitle({ name: "Tonelab", address: "Կորյունի 19ա", street: true }, "hy", HY), "Tonelab, Կորյունի 19ա, Երևան․ ինչ կա և տոմսեր");
+  });
+
+  test("the summary says the room, the street and the count, then the map only where the page draws one", () => {
+    const hall = { name: "Aram Khachaturian Concert Hall", address: "46 Mashtots Avenue" };
+    assert.equal(
+      venueSummary(hall, { count: "36 events", ...MAP }, "en", EN),
+      "Aram Khachaturian Concert Hall in Yerevan, 46 Mashtots Avenue: 36 events on this calendar. Map, directions and every date.",
+    );
+    // No address: the city ends the head.
+    assert.equal(
+      venueSummary({ name: "Diana Abgar Park" }, { count: "3 events", ...MAP }, "en", EN),
+      "Diana Abgar Park in Yerevan: 3 events on this calendar. Map, directions and every date.",
+    );
+    // No map: Paronyan has no geo, so its summary ends at the count.
+    assert.equal(
+      venueSummary({ name: "Պարոնյանի թատրոն", address: "Վազգեն Սարգսյանի 7" }, { count: "2 միջոցառում", map: false }, "hy", HY),
+      "Պարոնյանի թատրոն՝ Երևանում, Վազգեն Սարգսյանի 7։ Այս օրացույցում՝ 2 միջոցառում։",
+    );
+    // The house number and the count no longer meet across a mijaket.
+    assert.equal(
+      venueSummary({ name: "Բաբաջանյան համերգասրահ", address: "Աբովյան 2" }, { count: "11 միջոցառում", ...MAP }, "hy", HY),
+      "Բաբաջանյան համերգասրահ՝ Երևանում, Աբովյան 2։ Այս օրացույցում՝ 11 միջոցառում։ Քարտեզ, երթուղի և բոլոր ամսաթվերը։",
+    );
+  });
+
+  test("the summary gives up its tail, then the map, before it passes 160", () => {
+    const complex = { name: "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր", address: "Ծիծեռնակաբերդի խճուղի 1" };
+    const d = venueSummary(complex, { count: "8 միջոցառում", ...MAP }, "hy", HY);
+    assert.ok([...d].length <= SUMMARY_MAX, d);
+    assert.equal(d, "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր՝ Երևանում, Ծիծեռնակաբերդի խճուղի 1։ Այս օրացույցում՝ 8 միջոցառում։ Քարտեզ, երթուղի և բոլոր ամսաթվերը։");
+    // Sixteen more characters in the name and the whole tail no longer fits.
+    const longer = { ...complex, name: `${complex.name} ${"Բ".repeat(15)}` };
+    assert.equal(venueSummary(longer, { count: "8 միջոցառում", ...MAP }, "hy", HY), `${longer.name}՝ Երևանում, Ծիծեռնակաբերդի խճուղի 1։ Այս օրացույցում՝ 8 միջոցառում։ Քարտեզ և երթուղի։`);
+    const long = { name: "B".repeat(120), address: "1 Long Street" };
+    assert.equal(venueSummary(long, { count: "2 events", ...MAP }, "en", EN), `${"B".repeat(120)} in Yerevan, 1 Long Street: 2 events on this calendar.`);
+    assert.equal(venueSummary(long, { count: "2 events", map: false }, "en", EN), `${"B".repeat(120)} in Yerevan, 1 Long Street: 2 events on this calendar.`);
+  });
+
+  test("a title fits sixty whenever a form of the name can, and always says the city", () => {
+    for (const [lang, city] of [["en", EN], ["hy", HY]]) {
+      for (const v of [ghaplanyan, eventhub, eventhubHy, { name: "Bohem Theatre" }]) {
+        const t = venueTitle(v, lang, city);
+        assert.ok([...t].length <= TITLE_MAX, t);
+        assert.ok(t.includes(city) || (lang === "en" && v.name.includes(city)), t);
+      }
+    }
+    // A name too long for any form: the name, the city and the short tail,
+    // past sixty — a title is never empty, and never loses the city.
+    assert.equal(venueTitle({ name: "A".repeat(70) }, "en", EN), `${"A".repeat(70)}, Yerevan: what's on`);
+    assert.ok([...venueSummary(ghaplanyan, { count: "11 events", ...MAP }, "en", EN)].length <= SUMMARY_MAX);
+  });
+});
