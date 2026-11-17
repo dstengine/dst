@@ -19451,6 +19451,102 @@
           "/covers/winter-at-the-wetlands-walthamstow-2026-1024.webp"
         ]
       ]
+    },
+    "/covers/father-christmas-morden-hall-park-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/father-christmas-morden-hall-park-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/father-christmas-morden-hall-park-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/father-christmas-morden-hall-park-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/father-christmas-morden-hall-park-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/father-christmas-morden-hall-park-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/father-christmas-morden-hall-park-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/origin-weekend-down-house-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/origin-weekend-down-house-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/origin-weekend-down-house-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/origin-weekend-down-house-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/origin-weekend-down-house-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/origin-weekend-down-house-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/origin-weekend-down-house-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/wassail-day-dulwich-village-orchard-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wassail-day-dulwich-village-orchard-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/wassail-day-dulwich-village-orchard-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wassail-day-dulwich-village-orchard-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wassail-day-dulwich-village-orchard-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/wassail-day-dulwich-village-orchard-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wassail-day-dulwich-village-orchard-2027-1024.webp"
+        ]
+      ]
     }
   },
   "mbr.dst.llc": {
@@ -33017,6 +33113,70 @@
         [
           1024,
           "/covers/union-square-holiday-market-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/new-york-boat-show-javits-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/new-york-boat-show-javits-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/new-york-boat-show-javits-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/new-york-boat-show-javits-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/new-york-boat-show-javits-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/new-york-boat-show-javits-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/new-york-boat-show-javits-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/year-in-review-neil-degrasse-tyson-amnh-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/year-in-review-neil-degrasse-tyson-amnh-2027-1024.webp"
         ]
       ]
     }
@@ -47711,6 +47871,358 @@
         [
           1024,
           "/covers/wintermarkt-riesenradplatz-prater-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/adventlauf-lcc-wien-prater-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/adventlauf-lcc-wien-prater-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/adventlauf-lcc-wien-prater-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/adventlauf-lcc-wien-prater-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/adventlauf-lcc-wien-prater-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/adventlauf-lcc-wien-prater-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/adventlauf-lcc-wien-prater-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/buechersonntag-wohnung-loewenbach-wien-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/buechersonntag-wohnung-loewenbach-wien-2027-1024.webp"
+        ]
+      ]
+    },
+    "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/modelleisenbahn-spielzeugboerse-liesing-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/move-for-health-movemberlauf-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/move-for-health-movemberlauf-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/move-for-health-movemberlauf-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/move-for-health-movemberlauf-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/move-for-health-movemberlauf-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/move-for-health-movemberlauf-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/move-for-health-movemberlauf-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/perchtenlauf-boehmischer-prater-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/perchtenlauf-boehmischer-prater-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/perchtenlauf-prater-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/perchtenlauf-prater-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/perchtenlauf-prater-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/perchtenlauf-prater-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/perchtenlauf-prater-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/perchtenlauf-prater-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/perchtenlauf-prater-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/schmuck-mineralienboerse-floridsdorf-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/vienna-vintage-photo-fair-westlicht-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vienna-vintage-photo-fair-westlicht-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/vinyl-cd-boerse-moses-records-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vinyl-cd-boerse-moses-records-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/weihnachtsmarkt-am-hof-wien-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/weihnachtsmarkt-am-hof-wien-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/wiener-silvesterlauf-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/wiener-silvesterlauf-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/wiener-silvesterlauf-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/wiener-silvesterlauf-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/wiener-silvesterlauf-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/wiener-silvesterlauf-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/wiener-silvesterlauf-2026-1024.webp"
         ]
       ]
     }
