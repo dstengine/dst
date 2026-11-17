@@ -123,6 +123,50 @@ async function domFindings(page, width) {
       // link broke into three and the four-line threshold said nothing.
       if (lines >= 3 && share < 0.72 && beside)
         say("heading squeezed into a narrow column", h, `${lines} lines across ${Math.round(share * 100)}% of the row`);
+      // The same squeeze one level up: the heading's whole column shares a
+      // row with another column. tick's venue intro at 722px — breadcrumbs,
+      // h1, lede and fact table in 250px beside the 384px promo card — broke
+      // the theatre's name over six lines, and the check above, which looks
+      // only at the heading's own siblings, said nothing (17 Nov 2026). The
+      // page's own name only, at five lines: a card title in a grid of cards
+      // sits beside the next card by design and wraps because cards are
+      // narrow. Lines by their tops, not by the range's rects: a heading
+      // with a <span> or a <br> in it returns a rect per inline piece, and
+      // fest's three-line ticket heading counted six.
+      const rows = new Set([...range.getClientRects()].filter((r) => r.width > 0).map((r) => Math.round(r.top))).size;
+      if (h.tagName === "H1" && rows >= 5) {
+        let col = parent;
+        for (let up = 0; col && col !== document.body && up < 3; up++, col = col.parentElement) {
+          const cr = col.getBoundingClientRect();
+          const rival = [...(col.parentElement?.children ?? [])].find((sib) => {
+            if (sib === col) return false;
+            const sr = sib.getBoundingClientRect();
+            return sr.width > 0 && sr.top < cr.bottom && sr.bottom > cr.top && (sr.left >= cr.right || sr.right <= cr.left);
+          });
+          if (rival) {
+            say("heading squeezed by the column beside it", h, `${rows} lines in a ${Math.round(cr.width)}px column beside a ${Math.round(rival.getBoundingClientRect().width)}px one`);
+            break;
+          }
+        }
+      }
+    }
+
+    // A key/value list whose value is narrower than its own label and
+    // wraps: the label column has taken the room the value needed. The
+    // fact table on tick's venue page, 250px wide at 722px, gave its labels
+    // 144px and the address "Վազգեն Սարգսյանի 7, Երևան" three lines in 102
+    // (17 Nov 2026). A value that wraps in a column wider than its label is
+    // just a long value.
+    for (const dd of document.querySelectorAll("dd")) {
+      const dt = dd.previousElementSibling?.tagName === "DT" ? dd.previousElementSibling : dd.parentElement?.querySelector(":scope > dt");
+      if (!dt) continue;
+      const tr = dt.getBoundingClientRect(), vr = dd.getBoundingClientRect();
+      if (!vr.width || vr.left < tr.right - 1 || vr.top >= tr.bottom) continue; // stacked, not side by side
+      const range = document.createRange();
+      range.selectNodeContents(dd);
+      const lines = new Set([...range.getClientRects()].filter((r) => r.width > 0).map((r) => Math.round(r.top))).size;
+      if (lines >= 2 && vr.width < tr.width)
+        say("value squeezed beside its label", dd, `${lines} lines in ${Math.round(vr.width)}px beside a ${Math.round(tr.width)}px label`);
     }
 
     // Text the page background swallows. The pixel check below catches

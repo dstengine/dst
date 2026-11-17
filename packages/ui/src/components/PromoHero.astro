@@ -4,7 +4,8 @@
 // slot; the card takes the room to its right that the 34rem lede leaves
 // empty, level with the top of the intro: a venue page keeps its fact
 // table in the same row, and a card aligned to the bottom read as part of
-// that table. On a phone it follows the intro. Every `container hero`
+// that table. Where the row has no room for both, it follows the intro
+// (the rule below says how wide that is). Every `container hero`
 // section on the network goes through this since 31 Oct 2026; without a
 // code to show (no `Astro.site`), the row is the plain hero it was.
 import PromoCode from "./PromoCode.astro";
@@ -18,25 +19,47 @@ const code = Astro.site ? new URL(Astro.site).hostname : "";
 <section class:list={["container", "hero", { "hero-promo": code }]}>
   {code ? (
     <>
-      <div><slot /></div>
+      <div class="hero-intro"><slot /></div>
       <PromoCode lang={lang} code={code} />
     </>
   ) : <slot />}
 </section>
 
 <style>
+  /* The card goes beside the intro only where the intro keeps its lede's
+     34rem: the intro's 34rem (544px), the 40px gap and the card's 24rem
+     (384px) make a 968px row at a 16px root. A wrapping flex row decides
+     that by the row's own width, not the window's: until 17 Nov 2026 a
+     700px media query let the card take the lede's room, and at 722px (a
+     tablet, the desktop app's browser pane) tick's venue intro was left
+     250px, the theatre's name broke over six lines and the fact table's
+     address over three; a window-wide breakpoint could not see the 46rem
+     column of a `prose` page either, where tokiohotel's intro was 264px
+     from about 760px up. The row is in rem and the page's 1180px cap is
+     in px, so a reader with a root of about 19px or more (Chrome's
+     "Large" font) gets the card after the intro at every width. */
   .hero-promo {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    display: flex;
+    flex-wrap: wrap;
     column-gap: var(--space-4);
     row-gap: var(--space-3);
-    align-items: start;
+    align-items: flex-start;
   }
-  @media (max-width: 700px) {
-    .hero-promo { grid-template-columns: minmax(0, 1fr); }
-    /* Stacked, the card is the last thing in the hero and the next heading
-       sat on its border. On the section, not the card: a scoped selector
-       does not reach a child component's root. */
-    .hero-promo { padding-bottom: var(--space-4); }
+  .hero-intro { flex: 1 1 34rem; min-width: 0; }
+  /* The card's root is PromoCode's, which a scoped selector does not
+     reach. Stacked, the card is the last thing in the hero and the next
+     heading sat on its border, so it takes the gap below it then, and
+     only then: a margin's percentage is of the row's width, so the calc
+     is 100000 times what the row lacks of the width it needs, positive
+     exactly when the row wraps and clamped to the gap (999 left a band
+     of two layout units, 0.03px, where a wrapped card got 16 or 31px).
+     Beside the intro it is 0: on a short section index the card ends
+     less than 40px above the intro's foot, or below it, and a fixed
+     margin would have lengthened 31 of the 310 hero pages measured on
+     seven sites, by up to 40px (17 Nov 2026). */
+  .hero-promo > :global(.promo) {
+    flex: 0 1 24rem;
+    min-width: 0;
+    margin-bottom: clamp(0px, (34rem + var(--space-4) + 24rem - 100%) * 100000, var(--space-4));
   }
 </style>
