@@ -19419,6 +19419,38 @@
           "/covers/winter-palace-hampton-court-2026-1024.webp"
         ]
       ]
+    },
+    "/covers/winter-at-the-wetlands-walthamstow-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/winter-at-the-wetlands-walthamstow-2026-1024.webp"
+        ]
+      ]
     }
   },
   "mbr.dst.llc": {
