@@ -518,7 +518,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-halloween-run-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-16T02:35:00+01:00",
+    updatedAt: "2026-11-18T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-halloween-run-2026.jpg",
     imageAlt: "Eine helle Laufbahn, die in die Bildmitte führt, gesäumt von Bäumen mit rotem Herbstlaub",
@@ -585,6 +585,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/raritaetenmarkt-wunderkammer-albert-hall-wien-2026/",
+        eyebrow: "29. November, Josefstadt",
+        title: "Raritätenmarkt Wunderkammer 2026",
+        text: "Am ersten Adventsonntag drinnen: rare Sammelstücke, seltene Bücher und Kurioses in der Albert Hall, 10 bis 17 Uhr, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
         eyebrow: "17. Jänner, Innere Stadt",
@@ -677,7 +683,7 @@ export const items: EventItem[] = [
   {
     slug: "kuerbisfest-am-himmel-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-16T02:35:00+01:00",
+    updatedAt: "2026-11-18T02:35:00+01:00",
     site: "vien",
     image: "/covers/kuerbisfest-am-himmel-2026.jpg",
     imageAlt: "Ein breiter Haufen runder Papierscheiben in Rot, Grün, Ocker und Creme, in vielen verschiedenen Größen",
@@ -741,6 +747,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/raritaetenmarkt-wunderkammer-albert-hall-wien-2026/",
+        eyebrow: "29. November, Josefstadt",
+        title: "Raritätenmarkt Wunderkammer 2026",
+        text: "Am ersten Adventsonntag drinnen: rare Sammelstücke, seltene Bücher und Kurioses in der Albert Hall, 10 bis 17 Uhr, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
         eyebrow: "17. Jänner, Innere Stadt",
@@ -3124,7 +3136,7 @@ export const items: EventItem[] = [
   {
     slug: "vienna-vintage-photo-fair-westlicht-2026",
     createdAt: "2026-11-06T02:35:00+01:00",
-    updatedAt: "2026-11-17T15:18:00+00:00",
+    updatedAt: "2026-11-18T02:35:00+01:00",
     site: "vien",
     image: "/covers/vienna-vintage-photo-fair-westlicht-2026.jpg",
     imageAlt: "Alte Porträtfotografien in Rahmen und Schachteln auf einem langen Tisch, daneben ein aufgeschlagenes Album und ein kleiner Christbaum, Girlanden an der Wand",
@@ -3191,6 +3203,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/veranstaltungen/raritaetenmarkt-wunderkammer-albert-hall-wien-2026/",
+        eyebrow: "29. November, Josefstadt",
+        title: "Raritätenmarkt Wunderkammer 2026",
+        text: "Am ersten Adventsonntag drinnen: rare Sammelstücke, seltene Bücher und Kurioses in der Albert Hall, 10 bis 17 Uhr, Eintritt frei.",
+      },
       {
         href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
         eyebrow: "17. Jänner, Innere Stadt",
@@ -3847,6 +3865,103 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Auf einer Antiquariatsbörse lohnt sich der Blick ins Buch mehr als der auf den Rücken: Ob eine Erstausgabe wirklich eine ist, verrät das Impressum, und ob Tafeln, Karten oder ein Schutzumschlag fehlen, sieht man erst beim Durchblättern. Fragen nach dem Zustand sind auf Börsen üblich, und gute Händler nennen Mängel von selbst. Alte Ansichtskarten sind beschrieben oft mehr wert als unbeschrieben, wenn Stempel und Marke erhalten sind. Bargeld, eine stabile Tasche und etwas Zeit gehören dazu; die schönsten Stücke liegen selten ganz oben.",
+  },
+  {
+    slug: "raritaetenmarkt-wunderkammer-albert-hall-wien-2026",
+    createdAt: "2026-11-18T02:35:00+01:00",
+    updatedAt: "2026-11-18T02:35:00+01:00",
+    site: "vien",
+    image: "/covers/raritaetenmarkt-wunderkammer-albert-hall-wien-2026.jpg",
+    imageAlt: "Ein prunkvoller Saal mit geschwungener Treppe, Kristallluster und hohem Bogenfenster, auf langen rot und weiß gedeckten Tischen alte Bücher, Glasflaschen, ein Globus, ein leerer Goldrahmen und ein kleines Tannenbäumchen",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "Raritätenmarkt Wunderkammer 2026: Advent-Special in der Albert Hall",
+    cardTitle: "Raritätenmarkt Wunderkammer (Advent-Special)",
+    titleSeo: "Raritätenmarkt Wunderkammer: Albert Hall, Nov. 2026",
+    summary:
+      "Der Raritätenmarkt Wunderkammer ist am 1. Adventsonntag, 29. November 2026, von 10 bis 17 Uhr in der Albert Hall, Albertgasse 35 in Wien-Josefstadt, der Eintritt ist frei. Ausgewählte Händler bringen rare Sammelstücke, seltene Bücher und Kurioses in den Großen Saal, über die Prunkstiege hinauf.",
+    start: "2026-11-29",
+    startTime: "10:00",
+    endTime: "17:00",
+    utcOffset: "+01:00",
+    venue: "Albert Hall, Großer Saal, Albertgasse 35",
+    city: "Wien",
+    country: "Österreich",
+    organizer: "Thomas Kahler (Kurator Wunderkammer Raritätenmarkt)",
+    category: "Messe",
+    ticket: {
+      url: "http://www.wunderkammer.co.at/",
+      label: "Wunderkammer: Termin und Kontakt",
+      sells: false,
+    },
+    tickets: { priceFrom: 0, currency: "EUR" },
+    source: {
+      name: "Wunderkammer Raritätenmarkt — Website des Veranstalters",
+      url: "http://www.wunderkammer.co.at/",
+      verifiedOn: "2026-11-18",
+    },
+    body: [
+      "Zum ersten Adventsonntag öffnet die <strong>„Fabelhafte Wunderkammer“</strong> noch einmal ihre Tische: Der <strong>Raritätenmarkt Wunderkammer</strong> findet am <strong>Sonntag, 29. November 2026, von 10 bis 17 Uhr</strong> in der <strong>Albert Hall</strong> statt, <strong>Albertgasse 35, 1080 Wien</strong>. Der <strong>Eintritt ist frei</strong>. Der Veranstalter nennt die Ausgabe sein <strong>Advent-Special</strong>, die letzte des Jahres.",
+      "## Wo genau",
+      "Die Albert Hall ist ein neobarockes Palais in der Josefstadt, nahe dem Café Hummel. Der Markt ist im <strong>Großen Saal</strong>: laut Veranstalter <strong>über die Prunkstiege hinauf und nach hinten</strong>. Wer zum ersten Mal kommt, folgt also nicht dem Erdgeschoss, sondern der Treppe.",
+      "## Was es gibt",
+      "Ausgewählte Händlerinnen und Händler bringen nach Angaben des Veranstalters <strong>rare Sammelstücke, seltene Bücher und charmante Kleinigkeiten</strong>, Kurioses und Unerwartetes, und das ausdrücklich auch als Weihnachtsgeschenk. Wer bei der Novemberausgabe ausstellt, hat der Veranstalter noch nicht veröffentlicht. Bei früheren Märkten waren unter anderem Antiquar Peter Truppe mit antiquarischen Büchern dabei, Mila Palm vom Milaneum mit historischer Fotografie, dazu Vintage-Schmuck, Glas, Grafik, antike Puppen, Vintage-Parfums und volkskundliche Objekte.",
+      "## Woher der Markt kommt",
+      "Die Wunderkammer begann im <strong>Mai 2018</strong> im Großen Saal des <strong>Volkskundemuseums Wien</strong> in der Laudongasse; zu den Adventmärkten 2018 und 2019 kamen jeweils mehr als 500 Besucher. Weil das Museum umfassend saniert wird, ist der Markt seit Dezember 2024 in der Albert Hall zu Gast, rund 500 Meter entfernt. Kurator und Veranstalter ist <strong>Thomas Kahler</strong>; Fragen beantwortet er telefonisch und per E-Mail, die Kontakte stehen auf wunderkammer.co.at, Neuigkeiten auf Facebook und Instagram unter „wunderkammervienna“.",
+      "## Im Dezember weitersuchen",
+      "Wer nach dem ersten Advent weitersammeln will, findet im Dezember mehr Tische: die <a href=\"/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/\" title=\"Schallplattenbörse Wien: Längenfeldgasse, Dezember 2026\">Vinyl- und CD-Börse in der Längenfeldgasse</a> am 5. und 6. Dezember, die <a href=\"/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/\" title=\"Vienna Vintage Photo Fair: WestLicht, Dezember 2026\">Vienna Vintage Photo Fair im WestLicht</a> am 13. Dezember und im Jänner den <a href=\"/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/\" title=\"Büchersonntag Wien: Wohnung Löwenbach, Jänner 2027\">Büchersonntag</a> für antiquarische Bücher.",
+    ],
+    faq: [
+      {
+        q: "Wann ist der Raritätenmarkt Wunderkammer 2026?",
+        a: "Am <strong>1. Adventsonntag, 29. November 2026</strong>, von 10 bis 17 Uhr.",
+      },
+      {
+        q: "Wo findet die Wunderkammer statt?",
+        a: "In der Albert Hall, Albertgasse 35, 1080 Wien, im Großen Saal: über die Prunkstiege hinauf und nach hinten. Bis 2024 war der Markt im Volkskundemuseum in der Laudongasse.",
+      },
+      {
+        q: "Was kostet der Eintritt?",
+        a: "Nichts, der <strong>Eintritt ist frei</strong>.",
+      },
+      {
+        q: "Was kann man auf dem Raritätenmarkt kaufen?",
+        a: "Rare Sammelstücke, seltene Bücher, Kurioses und kleine Dinge, die sich als Weihnachtsgeschenk eignen. Die Aussteller dieser Ausgabe hat der Veranstalter noch nicht genannt; bei früheren Märkten gab es antiquarische Bücher, historische Fotografie, Vintage-Schmuck, Glas, Grafik und antike Puppen.",
+      },
+      {
+        q: "Wer veranstaltet die Wunderkammer?",
+        a: "Thomas Kahler, Kurator des Raritätenmarkts. Telefon und E-Mail stehen auf wunderkammer.co.at.",
+      },
+    ],
+    related: [
+      {
+        href: "/veranstaltungen/vinyl-cd-boerse-moses-records-wien-2026/",
+        eyebrow: "5.–6. Dezember, VHS Längenfeldgasse",
+        title: "Vinyl- und CD-Börse Wien 2026",
+        text: "LPs, Singles und CDs von rund 100 Ausstellern, Tageskarte 8 Euro.",
+      },
+      {
+        href: "/veranstaltungen/vienna-vintage-photo-fair-westlicht-2026/",
+        eyebrow: "13. Dezember, WestLicht",
+        title: "Vienna Vintage Photo Fair 2026",
+        text: "Originalfotografien aus drei Jahrhunderten von über 20 Händlern und Sammlern, Eintritt frei.",
+      },
+      {
+        href: "/veranstaltungen/buechersonntag-wohnung-loewenbach-wien-2027/",
+        eyebrow: "17. Jänner, Innere Stadt",
+        title: "Büchersonntag Wien 2027",
+        text: "Antiquarische Bücher, Ansichtskarten und Vintage-Fotos, zuletzt in der Wohnung Löwenbach von Adolf Loos.",
+      },
+      {
+        href: "/veranstaltungen/kuerbisfest-am-himmel-2026/",
+        eyebrow: "Cobenzl",
+        title: "Kürbisfest am Himmel 2026",
+        text: "Der Herbst davor: über 200 Kürbissorten am Cobenzl, Eintritt frei.",
+      },
+    ],
+    expertise:
+      "Auf einem Raritätenmarkt ist die Frage nach der Herkunft eines Stücks keine Unhöflichkeit, sondern der halbe Spaß: Gute Händler erzählen, woher ein Objekt kommt, wie alt es ist und was daran ergänzt oder restauriert wurde. Bei Glas und Porzellan lohnt ein Blick auf Boden und Rand, bei Schmuck auf Punzen, bei alten Fotografien auf die Rückseite mit dem Atelierstempel. Gehandelt wird mit Maß; wer mehrere Dinge am selben Stand nimmt, darf nach einem Paketpreis fragen. Bargeld, eine feste Tasche und etwas Papier zum Einwickeln gehören dazu, und weil die schönsten Stücke früh weg sind, ist der Vormittag die bessere Zeit.",
   },
   {
     slug: "silvesterkonzert-wiener-philharmoniker-2026",
