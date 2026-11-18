@@ -2448,6 +2448,149 @@ describe("Igloofest's English built pages", { skip: built ? false : "apps/fest/d
   });
 });
 
+// Beyond Wonderland (card 2026-11-18-beyond-wonderland-en): one guide of
+// five pages for three festivals in three states. Each edition's Event is
+// on its own page (markup.onPage for SoCal, a page markup for Midwest and
+// the Gorge), and each edition's offers end with that edition's own days
+// (markup.run), not with the last of the three.
+const bwEvent = events.find((e) => e.slug === "beyond-wonderland");
+const bwGuide = guides.find((g) => g.event === "beyond-wonderland");
+
+describe("Beyond Wonderland's data", () => {
+  const page = (kind) => bwGuide.pages.find((p) => p.kind === kind);
+  const next = (d) => new Date(Date.parse(d) + DAY).toISOString().slice(0, 10);
+
+  // Gate 3, the CTO's note 2: offers on an edition's last day, none the day
+  // after; the sheet's ends are 2027-03-27, 2027-06-13 and 2027-06-27.
+  test("each edition's offers end on its own last day, the sheet's", () => {
+    const ends = { socal: "2027-03-27", midwest: "2027-06-13", gorge: "2027-06-27" };
+    for (const [kind, end] of Object.entries(ends)) {
+      const pg = page(kind);
+      const on = rules.musicEvent(bwEvent, bwGuide, pg, end).offers;
+      assert.equal(on?.length, 3, `${kind}: three offers on ${end}`);
+      assert.equal(rules.musicEvent(bwEvent, bwGuide, pg, next(end)).offers, undefined, `${kind}: no offer on ${next(end)}`);
+    }
+  });
+
+  // The CTO's note 1: a kind no page has stops the build, and the default
+  // without onPage is the main page, as for every other guide.
+  test("onPage names a page the guide has, or the build stops", () => {
+    const fake = { ...bwEvent, markup: { ...bwEvent.markup, onPage: "nowhere" } };
+    assert.throws(() => rules.eventPages(fake, bwGuide), /names the kind "nowhere"/);
+    const plain = { ...bwEvent, markup: { ...bwEvent.markup, onPage: undefined } };
+    assert.deepEqual(rules.eventPages(plain, bwGuide).map((p) => p.kind).sort(), [rules.mainPage(bwGuide).kind, "gorge", "midwest"].sort());
+    assert.deepEqual(rules.eventPages(bwEvent, bwGuide).map((p) => p.kind).sort(), ["gorge", "midwest", "socal"]);
+    for (const guide of guides.filter((g) => g !== bwGuide))
+      assert.deepEqual(rules.eventPages(rules.eventOf(events, guide), guide)[0], rules.mainPage(guide), `${guide.event}/${guide.lang}`);
+  });
+
+  // en-US writes its dates month first, its times with AM and PM and its
+  // sizes in feet and inches (copy.ts, KEEP_EN_US and GLUE_EN_US): a short
+  // run holds each in a span, a long one by no-break spaces. The other
+  // English guides set the same text as before en-US came.
+  test("an en-US guide keeps its dates, times and sizes together; the other English guides as before", () => {
+    const at = (guide, text) => copy.inline(text, { event: rules.eventOf(events, guide), guide, today: "2026-11-18", where: "fixture" });
+    const short = "Gates open at 3 PM PT on March 26–28, 2027; a bag up to 12 x 6 x 12 inches, 2 miles away on 120 acres, at 4:30 PM CT.";
+    const long = `${"Three festivals in three states, each with its own gates, its own buses and its own rules on bags. ".repeat(2)}${short}`;
+    const kept = at(bwGuide, short);
+    for (const token of ["3 PM PT", "March 26–28, 2027", "12 x 6 x 12 inches", "2 miles", "120 acres", "4:30 PM CT"]) assert.ok(kept.includes(`<span class="nowrap">${token}</span>`), token);
+    const glued = at(bwGuide, long);
+    for (const pair of ["3\u00a0PM\u00a0PT", "March\u00a026–\u206028,\u00a02027", "12\u00a0x\u00a06\u00a0x\u00a012\u00a0inches", "2\u00a0miles", "120\u00a0acres", "4:30\u00a0PM\u00a0CT"]) assert.ok(glued.includes(pair), pair);
+    for (const lang of ["en", "en-AE", "en-IN", "en-AU"]) {
+      const guide = guides.find((g) => g.lang === lang);
+      assert.equal(at(guide, short), short.replace("March 26", '<span class="nowrap">March 26</span>'), lang);
+      assert.equal(at(guide, long), long, lang);
+    }
+    // Its sweep's short runs: a count keeps its word, a hyphen its short
+    // tail, a date its year; a long run holds a range's dash by a word joiner.
+    const counts = "At 18 gets in, a single-day pass, March 27, 2027 and 68.2 and on.";
+    for (const token of ["18 gets", "single-day", "March 27, 2027", "68.2 and"]) assert.ok(at(bwGuide, counts).includes(`<span class="nowrap">${token}</span>`), token);
+    assert.ok(at(bwGuide, `${long} June 11–13, 2027.`).includes("June\u00a011–\u206013,\u00a02027"));
+    for (const lang of ["en", "en-AE", "en-IN", "en-AU"])
+      for (const token of ["18 gets", "68.2 and"]) assert.ok(!at(guides.find((g) => g.lang === lang), counts).includes(`<span class="nowrap">${token}</span>`), `${lang}: ${token}`);
+    assert.equal(copy.headingHtml("Lineup: 2026 as it was, 2027 still to come", "en-US"), 'Lineup: <span class="nowrap">2026 as</span> it was, <span class="nowrap">2027 still</span> to come');
+    assert.equal(copy.headingHtml("Lineup: 2026 as it was, 2027 still to come", "en"), "Lineup: 2026 as it was, 2027 still to come");
+    assert.equal(copy.headingHtml("Friday March 26–Saturday March 27", "en-US"), 'Friday <span class="nowrap">March 26</span>–Saturday <span class="nowrap">March 27</span>');
+    assert.equal(copy.headingHtml("Friday March 26–Saturday March 27", "en"), "Friday March 26–Saturday March 27");
+  });
+});
+
+describe("Beyond Wonderland's built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
+  const html = built ? pages() : new Map();
+  const mine = [...html].filter(([p]) => p.startsWith("/beyond-wonderland/"));
+  const day = rules.today();
+  const prices = day < bwGuide.expires.prices;
+  const words = (s) => s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, "\u00a0").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/[ \t\n\r]+/g, " ");
+  const jsonLd = (h) => [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+  const events_ = (h) => jsonLd(h).filter((b) => /Event$/.test(b["@type"] ?? ""));
+
+  test("five pages", () => {
+    assert.deepEqual(mine.map(([p]) => p).sort(), bwGuide.pages.map((pg) => `/${pg.slug}/`).sort());
+    assert.equal(mine.length, 5);
+  });
+
+  // The SEO lead's gate-3 note 2: tools/seo-ignore.json takes the main page
+  // out of npm run seo for its h1, the event's name; this case holds what
+  // the exemption would otherwise let go.
+  test("Beyond Wonderland main page: festival in its title and summary, its name as its h1", () => {
+    const h = html.get("/beyond-wonderland/");
+    assert.match(words(/<title>([\s\S]*?)<\/title>/.exec(h)[1]), /festival/i, "title");
+    assert.match(words(/<meta name="description" content="([^"]*)"/.exec(h)[1]), /festival/i, "description");
+    assert.equal(words(/<h1\b[^>]*>([\s\S]*?)<\/h1>/.exec(h)[1]).trim(), bwGuide.name);
+  });
+
+  // The CTO's note 2: at most one Event a page and three in all, on the
+  // editions' pages; each named by its h1, at its own offset and place,
+  // its offers through its own store hop, priced until the take-down, and
+  // with no performer (none is announced).
+  test("three MusicEvents on the three editions' pages, one each", () => {
+    for (const [p, h] of mine) assert.ok(events_(h).length <= 1, `${p}: more than one Event`);
+    assert.equal(mine.reduce((n, [, h]) => n + events_(h).length, 0), 3);
+    const want = {
+      socal: ["T15:00:00-07:00", "NOS Events Center (National Orange Show Events Center)", "2027-03-27"],
+      midwest: ["T16:00:00-05:00", "Chicagoland Speedway", "2027-06-13"],
+      gorge: ["T15:00:00-07:00", "Gorge Amphitheatre", "2027-06-27"],
+    };
+    for (const [kind, [offset, place, end]] of Object.entries(want)) {
+      const p = `/beyond-wonderland/${kind}/`;
+      const [ev] = events_(html.get(p));
+      assert.ok(ev, `${p}: no Event`);
+      assert.equal(ev.name, words(/<h1\b[^>]*>([\s\S]*?)<\/h1>/.exec(html.get(p))[1]).trim(), p);
+      assert.ok(ev.startDate.endsWith(offset), `${p}: ${ev.startDate}`);
+      assert.equal(ev.location.name, place, p);
+      assert.ok(!("performer" in ev), `${p}: a performer`);
+      if (day > end) { assert.equal(ev.offers, undefined, p); continue; }
+      assert.equal(ev.offers.length, 3, p);
+      for (const o of ev.offers) {
+        assert.equal(o["@type"], "Offer", p);
+        assert.equal(o.url, `https://fest.one/go/beyond-wonderland-${kind}-tickets/`, p);
+        assert.equal(typeof o.price === "number", prices, `${p}: ${o.name} priced ${prices ? "until" : "from"} the take-down`);
+        assert.ok(!("priceValidUntil" in o), `${p}: an end of sale`);
+        assert.equal("validFrom" in o, kind !== "socal", `${p}: validFrom`);
+      }
+    }
+    for (const p of ["/beyond-wonderland/", "/beyond-wonderland/tickets/"]) assert.deepEqual(events_(html.get(p)), [], p);
+  });
+
+  // No sheet tag, no copy mark and no arrow left in what a reader or a
+  // crawler gets.
+  test("no tag, mark or arrow left on a Beyond Wonderland page", () => {
+    const bad = [];
+    for (const [p, h] of mine) {
+      const body = words(/<body\b[^>]*>([\s\S]*)<\/body>/.exec(h)[1].replace(/<script\b[\s\S]*?<\/script>/g, " "));
+      // The markup's strings, each on its own: its JSON closes on "}}".
+      const strings = [];
+      (function walk(v) { if (typeof v === "string") strings.push(v); else if (v && typeof v === "object") Object.values(v).forEach(walk); })(jsonLd(h));
+      for (const t of [body, ...strings]) {
+        const m = /\[[a-z_]+(?:\.[\w-]+)+\]|\{\{|\}\}|→ \//.exec(t);
+        if (m) bad.push(`${p}: "${t.slice(Math.max(0, m.index - 20), m.index + 30)}"`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+});
+
 /** The French page of an English Igloofest page's kind. */
 function frenchOf(p) {
   const kind = igloofestEn.pages.find((pg) => `/${pg.slug}/` === p)?.kind;

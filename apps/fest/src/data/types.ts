@@ -109,6 +109,25 @@ export interface FestEvent extends Dated {
         its offsets and its night cards' set times are computed from it at
         build, never written by hand. */
     timeZone?: string;
+    /** The `kind` of the page that prints this, the event's own MusicEvent,
+        where that is not the guide's main page: Beyond Wonderland's root
+        markup is SoCal's, on /beyond-wonderland/socal/, and its main page
+        carries none, since each of its three festivals has a page of its
+        own (the SEO lead's gate-1 note 6, card
+        2026-11-18-beyond-wonderland-en). The build stops where no page of a
+        guide has the kind (rules.ts, eventPages). This markup's `timeZone`
+        stays the zone copy.ts reads for night cards (nightCard), on every
+        page of the guide: a nights section on a page in another zone would
+        take this one's offsets. */
+    onPage?: string;
+    /** The sheet key of the edition this markup describes ("editions.0"),
+        whose `start` and `end` close its offers, where they are not the
+        event's `edition`: Beyond Wonderland's `edition` runs from SoCal's
+        first day to the Gorge's last, and each festival stops selling
+        after its own last day as the sheet gives it. A calendar day, so an
+        overnight `endDate` ("2027-03-28T02:00") does not keep a
+        festival's offers a day longer (the CTO's gate-3 note 2). */
+    run?: string;
     /** The event's name in the markup, where it is not the page's h1:
         Igloofest's main page marks up Montréal's run as « Igloofest
         Montréal 2027 » (the SEO lead's D8). */
@@ -335,9 +354,13 @@ export interface GuidePage extends Dated, Slots {
   jumps?: { id: string; label: string }[];
   /** A MusicEvent of the page's own, for a subpage that is an edition of
       its own at another place and time (Igloofest's Québec and Gatineau
-      pages), as the event's markup is written, without offers. */
-  markup?: Omit<FestEvent["markup"], "offers" | "subEvents" | "organizer"> & {
+      pages), as the event's markup is written, without offers; or with a
+      list of offers, one per channel, where the edition is sold on its own
+      (Beyond Wonderland's Midwest and Gorge, each through its own store),
+      ended by its `run`. */
+  markup?: Omit<FestEvent["markup"], "offers" | "subEvents" | "organizer" | "onPage"> & {
     organizer?: { name: string; url?: string } | { name: string; url?: string }[];
+    offers?: Offer[];
   };
 }
 

@@ -497,7 +497,29 @@ const EN_IN_TOKENS = [
   `\\bMumbai \\d{6}\\b|\\bK\\.K\\. Marg\\b|\\bSt\\. Vincent\\b`, // Mumbai 400034, K.K. Marg, St. Vincent (Lollapalooza India)
 ];
 const KEEP_EN_IN = new RegExp([KEEP_EN.source, ...EN_IN_TOKENS].join("|"), "g");
-const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR, "fr-fr": KEEP_FR_FR };
+// America's English (Beyond Wonderland, 18 November 2026) writes its dates
+// month first, "March 26", "June 11–13", "March 26, 2027", which the
+// house's list keeps only without the range: the range's own form goes
+// first, so that it wins at the same place. A clock time keeps its "AM" or
+// "PM" and the zone after it ("12 PM CT"), a size its unit ("20 x 20
+// feet", "8 x 12 x 18 inches"), a distance or an area its unit ("19.8
+// miles", "120 acres"). A row of its own, the house's English and the
+// tokens, so that no other English guide is set anew. Its line-break sweep
+// (18 November 2026) found a count parted from the word it counts ("2026 |
+// as", "68.2 | and", "18 | gets") and a short tail stranded ("single- |
+// day") in short runs: any number keeps the lowercase word after it, and a
+// hyphen a tail of up to three letters, after the tokens, so that a token
+// wins where both begin.
+const EN_US_RANGE = `\\b${MONTH} \\d{1,2}(?:[–-]\\d{1,2})?(?:, \\d{4})?\\b`; // March 26–27, June 10–13, March 27, 2027 (Beyond Wonderland)
+const EN_US_COUNT = `(?<![\\w$.,])\\$?\\d(?:[\\d,.]*\\d)?%? [a-z][a-z'’]*`; // 2026 as, 68.2 and, 18 gets (Beyond Wonderland)
+const EN_US_TAIL = `\\b[A-Za-z]+-[a-z]{1,3}\\b(?!-)`; // single-day (Beyond Wonderland)
+const EN_US_TOKENS = [
+  `\\b\\d{1,2}(?::\\d{2})? (?:AM|PM)(?: (?:PT|CT))?\\b`, // 3 PM, 2:15 AM, 12 PM CT (Beyond Wonderland)
+  `\\b\\d+(?: x \\d+)+ (?:feet|inches)\\b`, // 20 x 20 feet, 8 x 12 x 18 inches (Beyond Wonderland)
+  `\\b\\d[\\d,.]* (?:miles|feet|inches|acres|square feet)\\b`, // 19.8 miles, 120 acres (Beyond Wonderland)
+];
+const KEEP_EN_US = new RegExp([EN_US_RANGE, KEEP_EN.source, ...EN_US_TOKENS, EN_US_COUNT, EN_US_TAIL].join("|"), "g");
+const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-us": KEEP_EN_US, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR, "fr-fr": KEEP_FR_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -543,6 +565,12 @@ const GLUE_ES_MX = new RegExp([...ES_MX_TOKENS, `\\b\\d{1,2} de ${MES}(?: de \\d
 const GLUE_EN = new RegExp([...EN_TOKENS, `\\b\\d{1,2} ${MONTH}\\b`, `\\b\\d[\\d,.]*%? (?:km|mins?|hrs?|hours?|minutes|days?|nights?|people|person|[Yy]ears?|tickets?|passes|artists)\\b`].join("|"), "g");
 const GLUE_EN_AE = new RegExp([GLUE_EN.source, ...EN_AE_TOKENS].join("|"), "g");
 const GLUE_EN_IN = new RegExp([GLUE_EN.source, ...EN_IN_TOKENS].join("|"), "g");
+// America's English: its tokens, and a day with its month the American way
+// ("March 26", "June 11–13"), with its year where one follows, since a date
+// splits "March 27, | 2027" as surely as "March | 27" (the line-break
+// sweep's ledes, 18 November 2026); a range's dash is held to the day after
+// it by a word joiner, which has no width ("March 26– | 27").
+const GLUE_EN_US = new RegExp([EN_US_RANGE, GLUE_EN.source, ...EN_US_TOKENS].join("|"), "g");
 const glueEnglish = (glue: RegExp) => (run: string) =>
   run
     .replace(glue, (m) => m.replace(/ /g, "\u00a0"))
@@ -564,6 +592,8 @@ const GLUE: Record<string, (run: string) => string> = {
   "en-ae": glueEnglish(GLUE_EN_AE),
   // India's English, with its stages, times and postcode held.
   "en-in": glueEnglish(GLUE_EN_IN),
+  // America's English, with its dates month first.
+  "en-us": (run) => glueEnglish(GLUE_EN_US)(run).replace(new RegExp(`\\b(${MONTH}\u00a0\\d{1,2})([–-])(?=\\d)`, "g"), "$1$2\u2060"),
   "en-au": (run) => run,
   pt: (run) => run.replace(GLUE_PT, "$1\u00a0"),
   // A one-letter prefix keeps its name by a word joiner: EDC México's
@@ -713,9 +743,16 @@ export const longestRun = (text: string) => Math.max(0, ...text.split(HEADING_BR
 // The house's English headings, the UAE's (UNTOLD Dubai's "en-AE", whose
 // keep list is the house's with the dirham) and India's (Lollapalooza
 // India's "en-IN"), not Beyond The Valley's and Field Day's frozen "en-AU".
-const HEADING_EN = new Set(["en", "en-ae", "en-in"]);
+// America's English (Beyond Wonderland's "en-US") too, whose day with its
+// month or its range ("June 10–13 or June 11–13?") is held as a date the
+// American way, first, so the range's "10–13" is not held apart from its
+// month.
+const HEADING_EN = new Set(["en", "en-ae", "en-in", "en-us"]);
+// A year keeps the word after it as in its prose ("Lineup: 2026 as it was,
+// 2027 still to come" broke "2026 | as" at 320 px).
+const HEADING_KEEP_EN_US = new RegExp([`\\b${MONTH} \\d{1,2}(?:[–-]\\d{1,2})?\\b(?! \\d)`, HEADING_KEEP.source, `\\b\\d{4} \\p{Ll}+`].join("|"), "gu");
 export const headingHtml = (text: string, lang = "en") => {
-  const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
+  const set = text.replace(/[&<>'"]/g, (c) => ASTRO_ESCAPES[c]).replace(lang.toLowerCase() === "en-us" ? HEADING_KEEP_EN_US : HEADING_KEEP, (m) => `<span class="nowrap">${m}</span>`);
   const html = HEADING_EN.has(lang.toLowerCase()) ? set.replace(HEADING_WIDE_EN, '<span class="keep-date">$1</span>').replace(HEADING_KEEP_EN, (m) => `<span class="nowrap">${m}</span>`) : set;
   const keep = HEADING_KEEP_BY[lang.slice(0, 2).toLowerCase()];
   const glue = HEADING_GLUE[lang.slice(0, 2).toLowerCase()] ?? ((m: string) => m);

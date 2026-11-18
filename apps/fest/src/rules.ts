@@ -30,6 +30,19 @@ export const mainPage = (guide: Guide): GuidePage => {
   return main;
 };
 
+/** The pages of a guide that print a MusicEvent: the page of the event's
+    own markup, which is the main page unless the markup names another
+    kind (markup.onPage: Beyond Wonderland's SoCal), and each page with a
+    markup of its own (Igloofest's Québec and Gatineau). One event, one
+    URL. A kind that no page of the guide has would leave the event on no
+    page at all, and stops the build. */
+export function eventPages(event: FestEvent, guide: Guide): GuidePage[] {
+  const onPage = event.markup.onPage;
+  const root = onPage === undefined ? mainPage(guide) : guide.pages.find((p) => p.kind === onPage);
+  if (!root) throw new Error(`${guide.event}/${guide.slug}: markup.onPage names the kind "${onPage}", which no page of the guide has`);
+  return guide.pages.filter((p) => p === root || p.markup);
+}
+
 /** The first guide of each event, in data order: the one whose page is
     the event's x-default (routes.ts, alternatesFor) and whose card the hub
     prints. An event's further guides are its twins, each a chip on that
@@ -304,7 +317,15 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   if (sold && !guide.expires.prices)
     throw new Error(`${guide.event}/${guide.slug}: the MusicEvent prints prices, and "expires" has no prices date`);
   const shown = sold ? !expired(guide, "prices", day) : false;
-  const offers = hasEnded(event.edition, day) || !sold
+  // The offers stop after the edition's last day: the sheet's own edition
+  // where the markup names one (markup.run: each of Beyond Wonderland's
+  // three festivals ends on its own day, SoCal's on 27 March), else the
+  // event's. Its `end` is a calendar day, so a night that closes at 2 AM
+  // keeps no offer into the morning after.
+  const run = markup.run ? (resolve(event.sheet, markup.run) as { start?: unknown; end?: unknown } | undefined) : event.edition;
+  if (typeof run?.start !== "string" || (run.end !== undefined && typeof run.end !== "string"))
+    throw new Error(`${event.slug}: markup.run "${markup.run}" names no edition with a start and an end in the sheet`);
+  const offers = hasEnded(run as FestEvent["edition"], day) || !sold
     ? undefined
     : Array.isArray(sold)
       ? sold.filter((o) => !o.priceValidUntil || day <= o.priceValidUntil).map((o) => channel(event, inGuide(o), shown))
