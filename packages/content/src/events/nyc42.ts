@@ -1840,7 +1840,7 @@ export const items: EventItem[] = [
   {
     slug: "boo-at-the-zoo-bronx-2026",
     createdAt: "2026-09-08T22:51:25+04:00",
-    updatedAt: "2026-11-11T20:43:00-05:00",
+    updatedAt: "2026-11-19T03:40:00-05:00",
     site: "nyc42",
     image: "/covers/boo-at-the-zoo-bronx-2026.jpg",
     imageAlt: "An arch of overlapping paper leaves in amber, ochre and cream above a pale band carrying three animal paw prints",
@@ -1894,6 +1894,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/prototype-festival-new-york-2027/",
+        eyebrow: "January 12–24",
+        title: "PROTOTYPE Festival",
+        text: "Two weeks of new opera in January at eight venues in Manhattan and Brooklyn, with two free Arvo Pärt evenings at Trinity Church.",
+      },
       {
         href: "/events/new-york-boat-show-javits-2027/",
         eyebrow: "January 20–24",
@@ -4083,7 +4089,7 @@ export const items: EventItem[] = [
   {
     slug: "year-in-review-neil-degrasse-tyson-amnh-2027",
     createdAt: "2026-11-04T20:40:00-05:00",
-    updatedAt: "2026-11-17T15:18:00+00:00",
+    updatedAt: "2026-11-19T03:40:00-05:00",
     site: "nyc42",
     image: "/covers/year-in-review-neil-degrasse-tyson-amnh-2027.jpg",
     imageAlt: "A lecture hall seen from the back rows: a speaker on an orange stage beside a screen showing Saturn, a pale whale model hanging above under paper stars",
@@ -4150,6 +4156,12 @@ export const items: EventItem[] = [
       },
     ],
     related: [
+      {
+        href: "/events/prototype-festival-new-york-2027/",
+        eyebrow: "January 12–24",
+        title: "PROTOTYPE Festival",
+        text: "New opera at eight venues from January 12, five days after the talk; Hemingway's The Old Man and the Sea opens it on a stage of water.",
+      },
       {
         href: "/events/new-york-boat-show-javits-2027/",
         eyebrow: "January 20–24",
@@ -5135,7 +5147,7 @@ export const items: EventItem[] = [
   {
     slug: "new-york-boat-show-javits-2027",
     createdAt: "2026-11-11T20:43:00-05:00",
-    updatedAt: "2026-11-17T15:18:00+00:00",
+    updatedAt: "2026-11-19T03:40:00-05:00",
     site: "nyc42",
     image: "/covers/new-york-boat-show-javits-2027.jpg",
     imageAlt: "Sailboats and motorboats on stands under a long glass-roofed hall, small visitors walking between them, warm amber light",
@@ -5210,6 +5222,12 @@ export const items: EventItem[] = [
     ],
     related: [
       {
+        href: "/events/prototype-festival-new-york-2027/",
+        eyebrow: "January 12–24",
+        title: "PROTOTYPE Festival",
+        text: "The festival of new opera ends the same weekend, January 24; Dog Days plays BRIC in concert on January 23.",
+      },
+      {
         href: "/events/coney-island-polar-bear-plunge-2027/",
         eyebrow: "January 1",
         title: "Coney Island Polar Bear Plunge",
@@ -5230,5 +5248,105 @@ export const items: EventItem[] = [
     ],
     expertise:
       "Go on a weekday afternoon if you mean to talk to dealers: Saturday is the long day everyone else picks, and Sunday closes at four. If there is one boat you came for, ring its dealer before the show and book a time aboard, because the busiest boats are the ones with a queue or an appointment list. Bring slip-on shoes, since you will take them off at almost every boarding step, and leave the car at home: the 7 train puts you five minutes from the door and the show has no parking of its own.",
+  },
+  {
+    slug: "prototype-festival-new-york-2027",
+    createdAt: "2026-11-19T03:40:00-05:00",
+    updatedAt: "2026-11-19T03:40:00-05:00",
+    site: "nyc42",
+    image: "/covers/prototype-festival-new-york-2027.jpg",
+    imageAlt: "A cut-paper theatre stage between red curtains, a small wooden boat on a pool of blue water, paper waves on either side, a lit candle at the front and empty seats below",
+    imageKind: "generated",
+    imageWidth: 1024,
+    imageHeight: 1024,
+    title: "PROTOTYPE Festival 2027: new opera in New York",
+    titleSeo: "Prototype Festival 2027: New Opera, New York, Jan 12–24",
+    cardTitle: "PROTOTYPE Festival",
+    summary:
+      "January 12–24, 2027, in New York: the 13th PROTOTYPE Festival of new opera and music-theatre, with five premieres at eight venues in Manhattan and Brooklyn. Tickets are on sale now and priced show by show; two Arvo Pärt Compline services at Trinity Church are free with no RSVP.",
+    start: "2027-01-12",
+    end: "2027-01-24",
+    startTime: "19:30",
+    utcOffset: "-05:00",
+    venue: "Venues across Manhattan and Brooklyn",
+    city: "New York",
+    organizer: "Beth Morrison Projects",
+    category: "Festival",
+    ticket: {
+      url: "https://www.prototypefestival.org/season",
+      label: "The festival's program and tickets",
+    },
+    source: {
+      name: "PROTOTYPE Festival",
+      url: "https://www.prototypefestival.org/season",
+      verifiedOn: "2026-11-19",
+    },
+    body: [
+      "For two weeks in the dead of January, New York gets a festival of opera written now. <strong>PROTOTYPE</strong> runs from <strong>Tuesday, January 12</strong> to <strong>Sunday, January 24, 2027</strong>, its <strong>13th edition</strong>, produced by Beth Morrison Projects, the Brooklyn company behind the Pulitzer Prize-winning chamber operas <em>Angel's Bone</em> and <em>p r i s m</em>. The festival was founded in 2013 by Beth Morrison Projects and HERE, and it is built from short runs: most works play two to six nights, at theatres, a church, a cabaret room and a former nightclub across Manhattan and Brooklyn.",
+      "## The 2027 program",
+      "The biggest production opens the festival proper: <strong>The Old Man and the Sea</strong>, a New York premiere by Paola Prestini, Royce Vavrek and Karmina Šilec, reimagines Hemingway's novella on a stage of pools of water, with the cellist Jeffrey Zeigler, at the <strong>Gerald W. Lynch Theater</strong> at John Jay College, January 13 to 16 at 7:30pm. In Brooklyn, the Tunisian-born singer <strong>EMEL</strong> premieres <em>Everywhere We Looked Was Burning</em> at BRIC, fifteen years after her song \"Kelmti Horra\" became an anthem of the Tunisian Revolution. The Kazakh-American singer Timur brings <em>The Great Soviet Bucket</em>, a dark musical comedy with a puppet, to A.R.T./New York. Lacy Rose gives voice to the women in Gustav Klimt's paintings in <em>Visions</em> at Joe's Pub, National Sawdust stages a new chamber opera about the painter Hilma af Klint, and David T. Little and Royce Vavrek's <em>Dog Days</em> returns for its 15th anniversary in a single concert at BRIC on January 23. The full list, with every date, is below.",
+      "## Tickets and prices",
+      "Tickets are on sale now. There is no festival pass with one price: each show is booked on its own, through the box office the festival links from the show's page, and prices differ by show and venue. On November 19, when this page was checked, the festival's own box office priced <em>The Great Soviet Bucket</em> at $57.75, $63 and $78.75. Two evenings cost nothing: <strong>Compline by Candlelight: Arvo Pärt</strong> at <strong>Trinity Church</strong>, Sundays January 17 and 24 at 7pm, is free with no RSVP, and Tanyaradzwa Tawengwa's <em>Mutupo/Bloodline</em> at David Geffen Hall on January 17, co-presented with Globalfest, is listed as free admission. Students of elementary school, high school and college can get a free rush ticket to selected shows, one per person, handed out just before the house closes; which shows has not been announced yet. Refunds are not given; exchanges for another showtime may be possible through each venue's box office.",
+      "## Venues",
+      "Eight venues: the Gerald W. Lynch Theater, 524 West 59th Street; BRIC, 647 Fulton Street in Brooklyn; National Sawdust, 80 North 6th Street in Williamsburg; A.R.T./New York Mezzanine Theatres, 502 West 53rd Street; Trinity Church, 89 Broadway; Joe's Pub, 425 Lafayette Street at Astor Place; artXnyc, 409 West 14th Street; and David Geffen Hall at Lincoln Center. Late seating is not offered at every show, so arrive before the start.",
+      "## Around it",
+      "The festival opens five days after <a href=\"/events/year-in-review-neil-degrasse-tyson-amnh-2027/\" title=\"Year in Review with Neil deGrasse Tyson 2027\">Neil deGrasse Tyson's Year in Review</a> at the Natural History Museum, and its last week overlaps the <a href=\"/events/new-york-boat-show-javits-2027/\" title=\"New York Boat Show 2027 at the Javits Center\">New York Boat Show</a> at the Javits Center, January 20 to 24. Between performances, the <a href=\"/events/bryant-park-winter-village-2026/\" title=\"Winter Village at Bryant Park 2026\">Winter Village in Bryant Park</a> keeps its rink open all month.",
+    ],
+    programme: [
+      { heading: "Inside PROTOTYPE 2027", text: "Festival preview with OperaWire: excerpts and conversations. Tuesday, January 12, 7:30pm, National Sawdust." },
+      { heading: "The Old Man and the Sea", text: "New York premiere, opera-theatre after Hemingway; 100 minutes, no intermission. January 13–16, 7:30pm, Gerald W. Lynch Theater at John Jay College." },
+      { heading: "EMEL: Everywhere We Looked Was Burning", text: "World premiere, theatrical concert; 75 minutes. January 14–16 and 18–20, 7:30pm, BRIC." },
+      { heading: "The Great Soviet Bucket", text: "New York premiere, dark musical comedy by Timur; 60 minutes. January 15 and 16 at 7pm, January 17 at 2pm, A.R.T./New York Mezzanine Theatre." },
+      { heading: "Compline by Candlelight: Arvo Pärt", text: "Pärt's choral works in Trinity Church's Sunday Compline; 40 minutes, free, no RSVP. January 17 and 24, 7pm, Trinity Church." },
+      { heading: "Tanyaradzwa Tawengwa: Mutupo/Bloodline", text: "Songs from Zimbabwean mbira traditions, with Globalfest; free admission. Sunday, January 17, 7pm, David Geffen Hall." },
+      { heading: "Visions", text: "World premiere, song cycle on Gustav Klimt's muses by Lacy Rose; 60 minutes. January 18 at 9:30pm and January 19 at 7pm, Joe's Pub." },
+      { heading: "The Seen & the Unseen: Hilma & The Red Thread", text: "World premiere of Hilma, a chamber opera on Hilma af Klint, after a work-in-development by Wang Lu; 90 minutes with intermission. January 21 and 22, 7:30pm, National Sawdust." },
+      { heading: "Art Bath", text: "Immersive performance salon: opera, beatbox, Finnish folk-pop. January 22 and 23, 8pm, artXnyc." },
+      { heading: "Dog Days: 15th Anniversary Concert", text: "David T. Little and Royce Vavrek's opera in concert; about 2½ hours with intermission. Saturday, January 23, 7pm, BRIC." },
+    ],
+    faq: [
+      {
+        q: "When is the PROTOTYPE Festival 2027?",
+        a: "January 12 to 24, 2027, at eight venues in Manhattan and Brooklyn. The preview is on January 12 and The Old Man and the Sea opens on January 13.",
+      },
+      {
+        q: "How much are PROTOTYPE tickets?",
+        a: "Prices are set show by show; on November 19, 2026, The Great Soviet Bucket cost $57.75 to $78.75 at the festival's box office. Compline by Candlelight at Trinity Church is free with no RSVP, and students can get free rush tickets to selected shows.",
+      },
+      {
+        q: "Are tickets on sale?",
+        a: "Yes. Each show's page on prototypefestival.org links to its box office.",
+      },
+      {
+        q: "Where does the festival take place?",
+        a: "At the Gerald W. Lynch Theater, BRIC, National Sawdust, A.R.T./New York, Trinity Church, Joe's Pub, artXnyc and David Geffen Hall at Lincoln Center.",
+      },
+      {
+        q: "Can I get a refund?",
+        a: "No. The festival says refunds are not given, but an exchange for another showtime may be possible through the venue's box office.",
+      },
+    ],
+    related: [
+      {
+        href: "/events/year-in-review-neil-degrasse-tyson-amnh-2027/",
+        eyebrow: "January 7",
+        title: "Year in Review with Neil deGrasse Tyson",
+        text: "The year in science under the blue whale at the Natural History Museum, five days before the festival.",
+      },
+      {
+        href: "/events/new-york-boat-show-javits-2027/",
+        eyebrow: "January 20–24",
+        title: "New York Boat Show",
+        text: "Hundreds of boats at the Javits Center in the festival's last week; adults $20, children 12 and under free.",
+      },
+      {
+        href: "/events/bryant-park-winter-village-2026/",
+        eyebrow: "October 28 – February 28",
+        title: "Winter Village at Bryant Park",
+        text: "Free skating in Midtown, open all through the festival.",
+      },
+    ],
+    expertise:
+      "Book the short runs first: Visions, Dog Days and the Hilma af Klint opera have one or two nights each, while The Old Man and the Sea has four. The festival warns that not every show allows late seating, so plan the subway time between Brooklyn and Manhattan venues. If you want one evening for free, the Arvo Pärt Compline at Trinity Church needs no ticket at all.",
   },
 ];

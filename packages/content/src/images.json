@@ -32236,6 +32236,38 @@
         ]
       ]
     },
+    "/covers/prototype-festival-new-york-2027.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/prototype-festival-new-york-2027-480.avif"
+        ],
+        [
+          768,
+          "/covers/prototype-festival-new-york-2027-768.avif"
+        ],
+        [
+          1024,
+          "/covers/prototype-festival-new-york-2027-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/prototype-festival-new-york-2027-480.webp"
+        ],
+        [
+          768,
+          "/covers/prototype-festival-new-york-2027-768.webp"
+        ],
+        [
+          1024,
+          "/covers/prototype-festival-new-york-2027-1024.webp"
+        ]
+      ]
+    },
     "/covers/rawayana-barclays-center-2026.jpg": {
       "width": 1024,
       "height": 1024,
