@@ -43120,6 +43120,38 @@
         ]
       ]
     },
+    "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/pietrodarchi-bandoneon-state-symphony-khachaturian-festival-yerevan-2026-1024.webp"
+        ]
+      ]
+    },
     "/covers/pleyel-fortepiano-trio-khachaturian-house-museum-yerevan-2026.jpg": {
       "width": 1024,
       "height": 1024,
@@ -43813,6 +43845,38 @@
         [
           1024,
           "/covers/snow-queen-mansuryan-yerevan-opera-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/sounds-of-christmas-barbar-project-aria-choir-khachaturian-hall-yerevan-2026-1024.webp"
         ]
       ]
     },
@@ -44605,6 +44669,38 @@
         [
           1024,
           "/covers/vahagn-hayrapetyan-armenian-colors-yerevan-opera-2026-1024.webp"
+        ]
+      ]
+    },
+    "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026.jpg": {
+      "width": 1024,
+      "height": 1024,
+      "avif": [
+        [
+          480,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-480.avif"
+        ],
+        [
+          768,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-768.avif"
+        ],
+        [
+          1024,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-480.webp"
+        ],
+        [
+          768,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-768.webp"
+        ],
+        [
+          1024,
+          "/covers/vahan-artsruni-friends-charity-gala-komitas-house-yerevan-2026-1024.webp"
         ]
       ]
     },
