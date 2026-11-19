@@ -32,7 +32,10 @@ const SEGMENTED = new Set(["th", "lo", "km", "my", "zh", "ja"]);
 // mark stays with its letter. English and every other language keep the
 // tokeniser they always had, byte for byte; the ceilings in
 // tests/build-output.test.js record what this moved on the es and hy sites.
-const LETTERED = new Set(["es", "pt", "hy", "fr"]);
+// Italian joined with fest.one's Nameless guide (card 2026-11-19), whose
+// "è", "perché" and "più" the a–z filter broke into scraps; no other site
+// has an Italian page, so no ceiling moved.
+const LETTERED = new Set(["es", "pt", "hy", "fr", "it"]);
 
 /** The page's language, from its <html lang>, lower-cased: "en-au", "th". */
 export const langOf = (html) => (html.match(/<html\b[^>]*?\slang="([^"]*)"/i)?.[1] ?? "").toLowerCase();

@@ -128,7 +128,14 @@ export function hubDates(edition: FestEvent["edition"], lang: string): HubDates 
     const text = format.format(at(start));
     return { text, datetime: start, ends: [{ text, datetime: start }], joint: "", gap: "" };
   }
-  const parts = format.formatRangeToParts(at(start), at(end));
+  // A day as a single date prints it, with no leading zero: Italian's
+  // range pads its days where its single date does not («13 feb – 06 giu
+  // 2027», «04–06 giu 2027» on Node 24's ICU; Nameless, card 2026-11-19),
+  // and no other guide's locale pads one. Stripped on the parts, so the
+  // card's text and both its ends agree; for every locale, since a day
+  // with no zero is left as it is, and another ICU may print «4–6 giu»
+  // already. The datetime is the edition's own ISO day and stays padded.
+  const parts = format.formatRangeToParts(at(start), at(end)).map((p) => (p.type === "day" && /^0\d$/.test(p.value) ? { ...p, value: p.value.slice(1) } : p));
   const text = parts.map((p) => p.value).join("");
   const dash = parts.findIndex((p) => p.source === "shared" && p.type === "literal" && /[\u2013\u2014-]/.test(p.value));
   // A locale that joins its range some other way: each end in full, as
@@ -384,7 +391,20 @@ export function musicEvent(event: FestEvent, guide: Guide, page: GuidePage, day:
   // name twice across the lists stops the build, so a later sheet edit
   // cannot print a headliner twice (the CTO's gate-3 note 8). The root
   // event's only: a subpage's edition names none.
+  // An item may instead name one act, { key, name }, where the sheet's
+  // string carries more than the name: Nameless's "David Guetta (domenica
+  // 6 giugno 2027)", whose day is the sheet's and not the performer's.
+  // The name is printed, and the build stops unless the sheet's string at
+  // `key` is the name, or the name and a bracket after it (the CTO's
+  // gate-3 note 2), so the markup cannot drift from the sheet.
   const performers = page.markup ? undefined : event.markup.performers?.flatMap((k) => {
+    if (typeof k !== "string") {
+      const said = resolve(event.sheet, k.key);
+      if (typeof said !== "string") throw new Error(`${event.slug}: markup.performers names "${k.key}", which is not an act's name in the sheet`);
+      if (said !== k.name && !said.startsWith(`${k.name} (`))
+        throw new Error(`${event.slug}: markup.performers prints "${k.name}", which "${k.key}" in the sheet ("${said}") does not name`);
+      return [k.name];
+    }
     const list = resolve(event.sheet, k);
     if (!Array.isArray(list)) throw new Error(`${event.slug}: markup.performers names "${k}", which is not a list in the sheet`);
     return list.map((a) => {

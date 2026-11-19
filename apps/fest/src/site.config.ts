@@ -17,9 +17,11 @@
 // with Igloofest (fr-CA), its strings the copy's chrome block and the
 // fr-CA native reader's at gate 3 (swaps 2 and 3, fills 4). Its words are
 // set as the OQLF sets French (copy.ts, oqlf), and test:fest holds each
-// to it.
+// to it. it with Nameless (it-IT): "guida al festival" and the root crumb
+// "Festival" are the writer's, the tooltips and the template's words the
+// executor's, read by the it-IT native reader on the executor's strings.
 
-export type Lang = "en" | "es" | "pt" | "th" | "fr";
+export type Lang = "en" | "es" | "pt" | "th" | "fr" | "it";
 
 /** The row a guide's locale reads: "es-CL" and "es-MX" read `es`. A
     locale with no row throws, so a guide in a new language cannot build
@@ -165,6 +167,27 @@ export const site: Record<Lang, {
     analytics: true,
     defaultTheme: "dark",
   },
+  // Italian of Italy: the root crumb « Festival », the place a reader is
+  // in, as pt's « Festivais »; the wordmark's tooltip and the footer
+  // link's say what the hub holds, and that it is in English, as th's do.
+  it: {
+    siteName: "fest.one",
+    footerSiteName: "fest.one",
+    homeTitle: "Tutte le guide ai festival di fest.one: la pagina è in inglese",
+    titleSuffix: "guida al festival",
+    keyword: "festival",
+    lang: "it-IT",
+    homeHref: "/",
+    homeLabel: "Festival",
+    footerLinks: [
+      { href: "/", label: "Tutte le guide ai festival", title: "Le guide di fest.one elencate per evento e per lingua: la pagina è in inglese" },
+    ],
+    publisher,
+    networkFooter: false,
+    partnerDisclosure: false,
+    analytics: true,
+    defaultTheme: "dark",
+  },
 };
 
 /** The words the guide template says itself, per language. */
@@ -263,8 +286,28 @@ export const chrome: Record<Lang, {
     updated: "Mis à jour le",
     hop: { title: "Vous quittez fest.one — guide du festival", leaving: "Vous quittez fest.one pour", go: "Continuer", back: "Retour au guide" },
   },
+  // Italian of Italy. BaseLayout's own table has no it row, so the skip
+  // link and the menu button are here, as pt's and th's are. No hop row:
+  // the guide's hops print Redirect's own English page, as every guide's
+  // but the French ones do (the fest director's gate-3 note 3 leaves an
+  // Italian hop page to a card of its own), and no "updated" row, since
+  // the guide prints no updated line.
+  it: {
+    rootCrumbTitle: "Tutte le guide ai festival di fest.one: la pagina è in inglese",
+    siblingNav: "Pagine della guida",
+    onThisPage: "In questa pagina",
+    otherLanguages: "Questa guida in altre lingue",
+    breadcrumbs: "Percorso di navigazione",
+    skip: "Vai al contenuto",
+    menu: "Apri il menu",
+    // "Winter, Nameless Festival 2027": no one article fits "Biglietti" and
+    // "Come arrivare" alike, and a plain space makes "Winter Nameless
+    // Festival" an event that does not exist; the comma is a pause (the
+    // it-IT native reader on the executor strings, 19 Nov 2026).
+    rowJoint: ", ",
+  },
 };
 
 // Every keyword in one place for tools/seo-check.mjs, which reads this file
 // as text and picks the one matching each page's <html lang>.
-export const keywords = { en: "festival", es: "festival", pt: "festival", th: "เทศกาล", fr: "festival" };
+export const keywords = { en: "festival", es: "festival", pt: "festival", th: "เทศกาล", fr: "festival", it: "festival" };

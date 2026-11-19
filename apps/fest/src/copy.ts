@@ -519,7 +519,33 @@ const EN_US_TOKENS = [
   `\\b\\d[\\d,.]* (?:miles|feet|inches|acres|square feet)\\b`, // 19.8 miles, 120 acres (Beyond Wonderland)
 ];
 const KEEP_EN_US = new RegExp([EN_US_RANGE, KEEP_EN.source, ...EN_US_TOKENS, EN_US_COUNT, EN_US_TAIL].join("|"), "g");
-const KEEP: Record<string, RegExp> = { en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-us": KEEP_EN_US, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR, "fr-fr": KEEP_FR_FR };
+// Italian, as Italy writes it (Nameless, card 2026-11-19): a day with its
+// month, its ordinal and its year where they follow ("19 novembre 2026",
+// "1° giugno"); a range of days with its month ("dal 4 al 6 giugno", "13 e
+// 14 febbraio", "4-6 giugno", and "il 5 o il 6 giugno", which the line-break
+// sweep of 19 November 2026 broke "5 | o" at 430 px); a weekday with its day and month ("venerdì
+// 4", "domenica 6 giugno"), never with the year after them, which made a
+// run the lede broke inside on Tomorrowland Winter's French; a time with
+// its "alle" ("alle 14", "alle 23:59"); a figure with its noun ("139 euro",
+// "18 anni", "100.000 presenze"); and the organiser's WhatsApp number,
+// which a reader copies ("+39 392 027 7000"); and "line-up", the copy's
+// word, whole at its hyphen. Its own row, so no other
+// guide's bytes move.
+const MESE = "(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)";
+const GIORNO_IT = "(?:lunedì|martedì|mercoledì|giovedì|venerdì|sabato|domenica)";
+const IT_NOUN = "(?:euro|anni|giorni|presenze|palchi|stage|artisti|edizioni|rate|mesi|minuti|ore|km|persone|pass|biglietti)";
+const IT_TOKENS = [
+  `(?<!\\d)(?:dal |da )?\\d{1,2}°? (?:al|e|a|o il) \\d{1,2}°? ${MESE}(?: \\d{4})?(?![\\p{L}\\d])`, // dal 4 al 6 giugno, 13 e 14 febbraio, 5 o il 6 giugno
+  `(?<!\\d)\\d{1,2}[-–]\\d{1,2} ${MESE}(?: \\d{4})?(?![\\p{L}\\d])`, // 4-6 giugno 2027
+  `(?<!\\p{L})${GIORNO_IT} \\d{1,2}°?(?: ${MESE})?(?![\\p{L}\\d])`, // domenica 6 giugno
+  `(?<!\\d)\\d{1,2}°? ${MESE}(?: \\d{4})?(?![\\p{L}\\d])`, // 19 novembre 2026, 1° giugno
+  `(?<!\\p{L})alle \\d{1,2}(?:[:.]\\d{2})?(?![\\p{L}\\d])`, // alle 23:59
+  `(?<![\\d,.])\\d[\\d.,]*%? ${IT_NOUN}(?![\\p{L}\\d])`, // 139 euro, 100.000 presenze
+  `\\+39 \\d{3} \\d{3} \\d{4}`, // +39 392 027 7000
+  `(?<!\\p{L})[Ll]ine-up(?!\\p{L})`, // line-up, whole at its hyphen
+];
+const KEEP_IT = new RegExp(IT_TOKENS.join("|"), "gu");
+const KEEP: Record<string, RegExp> = { it: KEEP_IT, en: KEEP_EN, "en-ae": KEEP_EN_AE, "en-in": KEEP_EN_IN, "en-us": KEEP_EN_US, "en-au": KEEP_TOGETHER, es: KEEP_ES, "es-mx": KEEP_ES_MX, pt: KEEP_PT, th: KEEP_TH, fr: KEEP_FR, "fr-fr": KEEP_FR_FR };
 // In a long run a split date is a nicety, but a sign and the number it
 // belongs to are one token wherever they stand: the sweep found "R$ |
 // 765,45", "(11) | 5666-8822", "nº | 12.933" and "Linha | 9-Esmeralda" in
@@ -606,6 +632,10 @@ const GLUE: Record<string, (run: string) => string> = {
   // And a one-letter prefix keeps its name by a word joiner, as in es-mx:
   // the line-up broke « A- | Trak » at 320 px.
   "fr-fr": (run) => run.replace(KEEP_FR_FR, (m) => m.replace(/ /g, "\u00a0")).replace(/\b(\p{Lu})-(?=\p{Lu})/gu, "$1-\u2060"),
+  // Italian glues in a long run what it holds in a short one (KEEP_IT),
+  // and "line-up", the copy's word, keeps its hyphen by a word joiner, as
+  // a short hyphenated word strands no scrap (DESIGN.md).
+  it: (run) => run.replace(KEEP_IT, (m) => m.replace(/ /g, "\u00a0")).replace(/\b([Ll]ine)-(?=up\b)/g, "$1-\u2060"),
 };
 const unescaped = (s: string) => s.replace(/&(amp|lt|gt|quot);/g, "_");
 /** The rendered HTML with its dates and counts kept whole, in each short
@@ -719,9 +749,19 @@ const HEADING_KEEP_EN = new RegExp(`\\b\\d{1,2} ${MONTH}\\b(?! \\d)[:,.;]?|\\b\\
 // (February's 280 px is the widest) and keeps its nowrap. English only,
 // as above: no other guide has such a heading yet.
 const HEADING_WIDE_EN = /<span class="nowrap">((?:September|November|December) \d{4})<\/span>/g;
-const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR };
+// Italian the same way ("I pass del festival di giugno, prezzi al 19
+// novembre 2026", Nameless's tickets page): a day with its month and its
+// year, a keep-date as Spanish's is, and a year with the short word after
+// it ("Date 2027 e il ritorno a Lecco"). The date is wider than the column
+// below 390 px at the heading's size, as French's is, so the day is joined
+// to its month and the year to its word by a no-break space instead
+// (HEADING_GLUE): the sweep of 19 November 2026 found « 19 | novembre » at
+// 305 to 340 px and « 2027 | e » at 305. The line may still break before
+// a date's year, where the column cannot hold the date whole.
+const HEADING_KEEP_IT = new RegExp(`(?<!\\d)\\d{1,2}°? ${MESE}(?: \\d{4})?(?![\\p{L}\\d])[:,.;]?|(?<!\\d)\\d{4} \\p{Ll}{1,3}(?![\\p{L}\\d])`, "gu");
+const HEADING_KEEP_BY: Record<string, RegExp> = { es: HEADING_KEEP_ES, pt: HEADING_KEEP_PT, th: HEADING_KEEP_TH, fr: HEADING_KEEP_FR, it: HEADING_KEEP_IT };
 const HEADING_GLUE_FR = new RegExp(`(?<=\\d|\\der) (?=${MOIS}(?!\\p{L})|${FR_NOUN}(?!\\p{L}))`, "gu");
-const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0") };
+const HEADING_GLUE: Record<string, (span: string) => string> = { fr: (m) => m.replace(HEADING_GLUE_FR, "\u00a0"), it: (m) => m.replace(/(?<=\d°?) (?=\p{Ll})/gu, "\u00a0") };
 const ASTRO_ESCAPES: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" };
 // A heading's longest run that cannot break, in characters: GuidePage.astro
 // holds an h1 whose run is over 11 to what the run needs, and lets the

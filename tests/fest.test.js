@@ -212,7 +212,9 @@ describe("the copy and its sheet", () => {
   // ("CLP 98,000"), or the dirham, as UNTOLD Dubai's guide writes it
   // ("AED 350"), or the rupee, as Lollapalooza India's writes it ("₹4,499",
   // or with its code), or the euro after its figure, as France writes it
-  // (« 735 € », Tomorrowland Winter). Not the cap the organiser's terms put on a cash
+  // (« 735 € », Tomorrowland Winter), or the word after its figure, as
+  // Italy writes it (« 139 euro », Nameless; its copy never puts the sign
+  // first). Not the cap the organiser's terms put on a cash
   // refund ("capped at AED 1,500"), which is a rule of the terms and no
   // price. The stylised "¥ØU$UK€ ¥UK1MAT$U", an act's name, has no digit
   // after its signs and is none either.
@@ -220,7 +222,7 @@ describe("the copy and its sheet", () => {
     const loose = [];
     for (const { where, text, guide } of all) {
       const left = copy.applySpans(text, guide, END_OF_TIME, where);
-      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*|(?<!capped at )\bAED\s?\d[\d,.]*|₹\s?\d[\d,]*|\bINR\s?\d[\d,]*|\d[\d,]*\s?INR\b|\d[\d,.]*\s?€/g);
+      const hit = left.match(/[^\s]*\$\s?\d[\d,.]*|\d[\d,]*\s?\$(?!\s?\d)|\d[\d,]*\s?บาท|\d[\d,.]*\s?(?:USD|MXN|BRL|CLP|THB|CAD|EUR)\b|\bCLP\s?\d[\d,.]*|(?<!capped at )\bAED\s?\d[\d,.]*|₹\s?\d[\d,]*|\bINR\s?\d[\d,]*|\d[\d,]*\s?INR\b|\d[\d,.]*\s?€|\d[\d.,]*\s?euro\b/g);
       if (hit) loose.push(`${where}: ${hit.join(", ")}`);
     }
     assert.deepEqual(loose, [], "wrap the sentence in {{until prices}}…{{/until}} (or the key its expiry has)");
@@ -785,9 +787,9 @@ describe("where a guide's links lead", () => {
     for (const g of guides) {
       const n = node(g, "2026-11-09");
       if (g.event !== "lollapalooza-india") {
-        // EDC México names its own three, and Tomorrowland Winter its
-        // forty-seven, each pinned in its own test below.
-        if (g.event !== "edc-mexico" && g.event !== "tomorrowland-winter") assert.ok(!("performer" in n), `${g.event}/${g.slug}`);
+        // EDC México names its own three, Tomorrowland Winter its
+        // forty-seven and Nameless its one, each pinned in its own test.
+        if (g.event !== "edc-mexico" && g.event !== "tomorrowland-winter" && g.event !== "nameless") assert.ok(!("performer" in n), `${g.event}/${g.slug}`);
         continue;
       }
       assert.equal(n.eventStatus, "https://schema.org/EventScheduled");
@@ -2591,6 +2593,158 @@ describe("Beyond Wonderland's built pages", { skip: built ? false : "apps/fest/d
   });
 });
 
+// Nameless (card 2026-11-19, it-IT): two events under one name, each with
+// its own MusicEvent; Italian typesetting; the hub's range without a
+// padded day; a performer named by its own string in the sheet.
+const nmGuide = guides.find((g) => g.event === "nameless");
+const nmEvent = events.find((e) => e.slug === "nameless");
+
+describe("Nameless's data", () => {
+  const winter = nmGuide.pages.find((p) => p.kind === "winter");
+  const node = (page, day) => rules.musicEvent(nmEvent, nmGuide, page, day);
+
+  // The CTO's gate-3 note 1: Intl pads an Italian range's days on Node 24
+  // («13 feb – 06 giu 2027»); the card prints them as a single date does.
+  test("the hub prints an Italian range with no padded day", () => {
+    const one = (s) => s.replace(/\s+/g, " ");
+    const wide = rules.hubDates({ start: "2027-02-13", end: "2027-06-06" }, "it-IT");
+    assert.equal(one(wide.text), "13 feb – 6 giu 2027");
+    assert.deepEqual(wide.ends.map((e) => [one(e.text), e.datetime]), [["13 feb", "2027-02-13"], ["6 giu 2027", "2027-06-06"]]);
+    assert.equal(wide.datetime, "2027-02-13/2027-06-06");
+    const close = rules.hubDates({ start: "2027-06-04", end: "2027-06-06" }, "it-IT");
+    assert.equal(one(close.text), "4–6 giu 2027");
+    assert.deepEqual(close.ends.map((e) => e.text), ["4", "6 giu 2027"]);
+    assert.equal(close.datetime, "2027-06-04/2027-06-06");
+  });
+
+  // The CTO's gate-3 note 2: { key, name } prints the name, and only where
+  // the sheet's string is the name or the name and a bracket after it.
+  test("a { key, name } performer prints its name, held to the sheet's string", () => {
+    assert.deepEqual(node(rules.mainPage(nmGuide), "2026-11-19").performer, [{ "@type": "PerformingGroup", name: "David Guetta" }]);
+    const withActs = (performers) => ({ ...nmEvent, markup: { ...nmEvent.markup, performers } });
+    const run = (performers) => rules.musicEvent(withActs(performers), nmGuide, rules.mainPage(nmGuide), "2026-11-19");
+    assert.throws(() => run([{ key: "lineup.0.acts.0", name: "David Guettaxx" }]), /does not name/);
+    assert.throws(() => run([{ key: "lineup.0.acts.0", name: "David" }]), /does not name/);
+    assert.throws(() => run([{ key: "lineup.0.acts", name: "David Guetta" }]), /not an act's name/);
+    assert.throws(() => run([{ key: "lineup.0.acts.0", name: "David Guetta" }, { key: "lineup.0.acts.0", name: "David Guetta" }]), /names an act twice/);
+    // A string keeps its meaning, a key to a list of acts.
+    assert.deepEqual(run(["lineup.0.acts"]).performer.map((p) => p.name), ["David Guetta (domenica 6 giugno 2027)"]);
+  });
+
+  // The SEO lead's gate-3 note 4: June's event on the main page at +02:00
+  // with David Guetta, Winter's on its page at +01:00 with no performer;
+  // Ciaotickets' passes only, priced until the take-down and gone after
+  // each event's own last day; neither the Forever Pass nor the residents'
+  // form is an offer.
+  test("June's and Winter's MusicEvents: their offsets, their acts, their offers", () => {
+    const june = node(rules.mainPage(nmGuide), "2026-11-19");
+    assert.deepEqual([june.name, june.startDate, june.endDate, june.location.name], ["Nameless Festival 2027", "2027-06-04T14:00:00+02:00", "2027-06-06T23:00:00+02:00", "Area del Bione"]);
+    assert.deepEqual(june.offers.map((o) => [o.price, o.priceCurrency, o.url, o.seller.name]), [139, 349, 79].map((p) => [p, "EUR", "https://fest.one/go/nameless-ciaotickets/", "Ciaotickets"]));
+    const feb = node(winter, "2026-11-19");
+    assert.deepEqual([feb.name, feb.startDate, feb.endDate, feb.location.name], ["Nameless Winter 2027", "2027-02-13T14:00:00+01:00", "2027-02-14T23:00:00+01:00", "Barzio"]);
+    assert.ok(!("performer" in feb), "a performer on Winter");
+    assert.deepEqual(feb.offers.map((o) => o.price), [59, 199]);
+    for (const o of [...june.offers, ...feb.offers]) {
+      assert.ok(!/forever|residen/i.test(`${o.name} ${o.url}`), o.name);
+      assert.ok(!("validFrom" in o) && !("priceValidUntil" in o), o.name);
+    }
+    for (const n of [node(rules.mainPage(nmGuide), nmGuide.expires.prices), node(winter, nmGuide.expires.prices)])
+      for (const o of n.offers) assert.ok(!("price" in o) && !("priceCurrency" in o), `${o.name} priced after the take-down`);
+    assert.equal(node(winter, "2027-02-14").offers.length, 2);
+    assert.ok(!("offers" in node(winter, "2027-02-15")), "Winter offers after 14 February");
+    assert.equal(node(rules.mainPage(nmGuide), "2027-02-15").offers.length, 3);
+    assert.ok(!("offers" in node(rules.mainPage(nmGuide), "2027-06-07")), "June offers after 6 June");
+  });
+
+  // The SEO lead's gate-3 condition 5: markup = visible also holds when
+  // both are empty, so every question keeps an answer at today and on the
+  // take-down day, and the count is the same at both.
+  test("every FAQ answer has text, today and on the take-down day, and none drops out", () => {
+    const counts = [];
+    for (const day of [rules.today(), nmGuide.expires.prices]) {
+      let n = 0;
+      for (const page of nmGuide.pages)
+        for (const row of page.faq) {
+          const a = copy.inline(row.a, { event: nmEvent, guide: nmGuide, page, today: day, where: `/${page.slug}/` });
+          assert.ok(a.replace(/<[^>]+>/g, "").trim().length > 20, `${day} /${page.slug}/: "${row.q}" has no answer`);
+          n += 1;
+        }
+      counts.push(n);
+    }
+    assert.deepEqual(counts, [12, 12]);
+  });
+
+  test("an Italian guide keeps its dates, counts and number together; the other guides as before", () => {
+    const at = (guide, text) => copy.inline(text, { event: rules.eventOf(events, guide), guide, today: "2026-11-19", where: "fixture" });
+    const short = "Da venerdì 4 a domenica 6 giugno 2027, dal 4 al 6 giugno, alle 23:59, 139 euro, 18 anni, la line-up.";
+    assert.ok([...short].length <= 160);
+    const kept = at(nmGuide, short);
+    for (const token of ["venerdì 4", "domenica 6 giugno", "dal 4 al 6 giugno", "alle 23:59", "139 euro", "18 anni", "line-up"]) assert.ok(kept.includes(`<span class="nowrap">${token}</span>`), token);
+    const more = "Il 19 novembre 2026, il 1° giugno, 13 e 14 febbraio, 4-6 giugno, il 5 o il 6 giugno, 100.000 presenze, +39 392 027 7000.";
+    for (const token of ["19 novembre 2026", "1° giugno", "13 e 14 febbraio", "4-6 giugno", "5 o il 6 giugno", "100.000 presenze", "+39 392 027 7000"]) assert.ok(at(nmGuide, more).includes(`<span class="nowrap">${token}</span>`), token);
+    const long = `${"Due eventi con lo stesso nome, ognuno con le sue date, il suo luogo e i suoi biglietti. ".repeat(2)}${short}`;
+    const glued = at(nmGuide, long);
+    for (const pair of ["venerdì 4", "domenica 6 giugno", "dal 4 al 6 giugno", "alle 23:59", "139 euro", "18 anni", "line-⁠up"]) assert.ok(glued.includes(pair), pair);
+    // The year stays off a weekday's run.
+    assert.ok(glued.includes("giugno 2027"), "a weekday's run glued to its year");
+    // English holds "line-up" already, and en-US a count with the word
+    // after it, by their own rules; the Italian forms move no other
+    // guide's text.
+    const plain = short.replace(", la line-up", "");
+    for (const lang of ["en", "es-CL", "pt-BR", "fr-CA", "fr-FR"]) {
+      const guide = guides.find((g) => g.lang === lang);
+      assert.equal(at(guide, plain), plain, lang);
+    }
+    assert.equal(copy.headingHtml("I pass del festival di giugno, prezzi al 19 novembre 2026", "it-IT"), 'I pass del festival di giugno, prezzi al <span class="keep-date">19\u00a0novembre 2026</span>');
+    assert.equal(copy.headingHtml("Date 2027 e il ritorno a Lecco", "it-IT"), 'Date <span class="keep-date">2027\u00a0e</span> il ritorno a Lecco');
+    assert.equal(copy.headingHtml("Line-up 2027", "it-IT"), "Line-up 2027");
+  });
+});
+
+describe("Nameless's built pages", { skip: built ? false : "apps/fest/dist is missing: npm run build:fest first" }, () => {
+  const html = built ? pages() : new Map();
+  const mine = [...html].filter(([p]) => p.startsWith("/nameless/"));
+  const words = (s) => s.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/[ \t\n\r]+/g, " ");
+  const jsonLd = (h) => [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+  const events_ = (h) => jsonLd(h).filter((b) => /Event$/.test(b["@type"] ?? ""));
+
+  test("four pages, two MusicEvents: June's on the main page, Winter's on its own", () => {
+    assert.deepEqual(mine.map(([p]) => p).sort(), nmGuide.pages.map((pg) => `/${pg.slug}/`).sort());
+    const want = { "/nameless/": ["+02:00", true], "/nameless/winter/": ["+01:00", false] };
+    for (const [p, h] of mine) {
+      const evs = events_(h);
+      if (!want[p]) { assert.deepEqual(evs, [], p); continue; }
+      assert.equal(evs.length, 1, p);
+      assert.equal(evs[0].name, words(/<h1\b[^>]*>([\s\S]*?)<\/h1>/.exec(h)[1]).trim(), p);
+      assert.ok(evs[0].startDate.endsWith(want[p][0]), `${p}: ${evs[0].startDate}`);
+      assert.equal("performer" in evs[0], want[p][1], `${p}: performer`);
+    }
+    assert.deepEqual(events_(html.get("/nameless/"))[0].performer.map((x) => x.name), ["David Guetta"]);
+  });
+
+  test("each FAQPage answer on a Nameless page has text", () => {
+    for (const [p, h] of mine)
+      for (const b of jsonLd(h).filter((x) => x["@type"] === "FAQPage"))
+        for (const q of b.mainEntity) assert.ok(q.name.trim() && q.acceptedAnswer.text.trim().length > 20, `${p}: ${q.name}`);
+    assert.equal(jsonLd(html.get("/nameless/")).find((b) => b["@type"] === "FAQPage").mainEntity.length, 12);
+  });
+
+  test("no tag, mark or arrow left on a Nameless page", () => {
+    const bad = [];
+    for (const [p, h] of mine) {
+      const body = words(/<body\b[^>]*>([\s\S]*)<\/body>/.exec(h)[1].replace(/<script\b[\s\S]*?<\/script>/g, " "));
+      const strings = [];
+      (function walk(v) { if (typeof v === "string") strings.push(v); else if (v && typeof v === "object") Object.values(v).forEach(walk); })(jsonLd(h));
+      for (const t of [body, ...strings]) {
+        const m = /\[[a-z_]+(?:\.[\w-]+)+\]|\{\{|\}\}|→ \//.exec(t);
+        if (m) bad.push(`${p}: "${t.slice(Math.max(0, m.index - 20), m.index + 30)}"`);
+      }
+    }
+    assert.deepEqual(bad, []);
+  });
+});
+
 /** The French page of an English Igloofest page's kind. */
 function frenchOf(p) {
   const kind = igloofestEn.pages.find((pg) => `/${pg.slug}/` === p)?.kind;
@@ -2666,6 +2820,7 @@ describe("scripts", () => {
     assert.deepEqual(wordsOf("Dos días: ñandú, ¡12,5%!", "es-cl"), ["dos", "días", "ñandú", "12", "5"]);
     assert.deepEqual(wordsOf("Dos días", "es"), ["dos", "días"]);
     assert.deepEqual(wordsOf("Երևանի համերգներ", "hy"), ["երևանի", "համերգներ"]);
+    assert.deepEqual(wordsOf("Perché è più vicino: l'area del Bione", "it-it"), ["perché", "è", "più", "vicino", "l", "area", "del", "bione"]);
   });
 
   // French is in the same set, and the no-break spaces oqlf sets

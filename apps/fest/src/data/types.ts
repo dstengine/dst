@@ -193,8 +193,12 @@ export interface FestEvent extends Dated {
         in order, where the organiser's text names its bill but not by day
         (Lollapalooza India: the release's headliners and acts, then the
         two its captions add). An item is an act's name or an object whose
-        `act` is one. Absent, the event names no performer. */
-    performers?: string[];
+        `act` is one. Absent, the event names no performer. An item may
+        instead be one act, { key, name }: the sheet key of a string that
+        is the act's name, or its name and a bracket after it (Nameless's
+        "David Guetta (domenica 6 giugno 2027)"), and the name the markup
+        prints, which the build holds to that string (rules.ts). */
+    performers?: (string | { key: string; name: string })[];
   };
   /** Section 1 of the card, verbatim with every repair. Free-form on
       purpose: it is the scout's document, and copy.ts resolves the copy's
